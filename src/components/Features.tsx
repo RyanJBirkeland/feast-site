@@ -10,25 +10,25 @@ const FEATURES = [
     icon: ChatBubbleLeftRightIcon,
     title: "Conversational, Not Transactional",
     description:
-      "Tell Feast what you're feeling this week. No forms, no checkboxes — just a natural conversation with an AI dietitian who listens.",
+      "Tell Feast what you're feeling this week. No forms, no checkboxes — just natural conversation. Every interaction should feel like talking to a friend, not filling out a form.",
   },
   {
     icon: SparklesIcon,
     title: "It Remembers You",
     description:
-      "Cutting back on carbs? Feast remembers next week. Loved that Thai recipe? It'll find more like it. The app gets smarter every day.",
+      "Feast should feel like it knows you. Cutting back on carbs? It remembers next week. Loved that Thai recipe? It'll find more like it. The app gets smarter every day.",
   },
   {
     icon: HeartIcon,
     title: "A Team That Cares",
     description:
-      "Your Dietitian plans your week. Your Chef guides cooking. Your Coach keeps you on track. They're not chatbot modes — they're companions.",
+      "Four AI specialists — Nutritionist, Dietitian, Chef & Coach. They have a voice, a style, warmth. They're not chatbot modes — they're companions who care about your goals.",
   },
   {
     icon: ShoppingCartIcon,
     title: "Groceries, Handled",
     description:
-      "One tap turns your meal plan into a grocery list. Deduplicated, organized, and ready to send to Instacart for delivery.",
+      "Your meal plan becomes a grocery list — deduplicated, organized by category, and ready to send to Instacart with one tap. No more 41-minute trips forgetting items.",
   },
 ];
 
@@ -41,11 +41,11 @@ export function Features() {
             Why Feast
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-[-0.4px] text-v2-text-primary sm:text-4xl">
-            Not another meal planning app
+            The intelligent way to plan, shop, and cook
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-v2-text-secondary">
-            Most apps treat you like a database row. Feast treats you like a
-            person.
+            Every meal planning app treats users the same way: a form to fill
+            out, checkboxes to tick. That&apos;s not how humans work.
           </p>
         </div>
 

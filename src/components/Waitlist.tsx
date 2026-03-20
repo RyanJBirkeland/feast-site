@@ -67,8 +67,8 @@ export function Waitlist() {
           Be the first to try Feast
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-v2-text-secondary">
-          Feast is currently in beta on TestFlight. Join the waitlist and
-          we&apos;ll send you an invite when your spot opens up.
+          Feast is currently in private beta. Join our waitlist for early
+          access — we&apos;ll send you an invite when your spot opens up.
         </p>
 
         <form
@@ -97,7 +97,7 @@ export function Waitlist() {
         </form>
 
         <p className="mt-4 text-[13px] text-v2-text-tertiary">
-          No spam. Just an invite when it&apos;s your turn.
+          No spam, ever. Just an invite when it&apos;s your turn.
         </p>
       </div>
     </section>

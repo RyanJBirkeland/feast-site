@@ -6,25 +6,25 @@ const STEPS = [
     number: "01",
     title: "Have a conversation",
     description:
-      'Open Feast and tell it what you\'re in the mood for. "I want something light this week" or "I\'m cooking for my partner who\'s vegetarian" — whatever\'s on your mind.',
+      'Open Feast and tell your Dietitian what you\'re in the mood for. "I want something high-protein this week" or "My partner is vegetarian on Tuesdays" — just talk naturally.',
   },
   {
     number: "02",
     title: "Get a plan that fits",
     description:
-      "Your AI Dietitian builds a personalized weekly meal plan based on what you said, what you've liked before, and your nutritional goals. Swap anything you don't want.",
+      "Your Dietitian builds a personalized 7-day meal plan based on your conversation, your history, and your nutritional goals. Don't like something? Swap it with a tap.",
   },
   {
     number: "03",
     title: "Cook with confidence",
     description:
-      'When it\'s time to cook, your AI Chef walks you through each recipe step by step. Ask questions mid-recipe — "can I substitute this?" — and get real answers.',
+      "When it's time to cook, your Chef walks you through each recipe step by step. Ask questions mid-recipe and get real answers — like having a pro in your kitchen.",
   },
   {
     number: "04",
     title: "Shop in one tap",
     description:
-      "Your meal plan becomes a grocery list — deduplicated, organized, and ready to send to Instacart for delivery.",
+      "Your meal plan becomes a grocery list — deduplicated, organized by category, and ready to send to Instacart for delivery. No more wandering the aisles.",
   },
 ];
 
@@ -40,7 +40,7 @@ export function HowItWorks() {
             Four steps. No learning curve.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-v2-text-secondary">
-            Just tell it what you want.
+            From discovery to delivery — Feast handles the entire food journey.
           </p>
         </div>
 

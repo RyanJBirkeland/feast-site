@@ -1,33 +1,43 @@
 const PERSONAS = [
   {
+    emoji: "🩺",
+    name: "Nutritionist",
+    role: "Health Expert",
+    quote:
+      "You've been consistently low on fiber — averaging 18g vs. your 25g target. Adding more legumes to next week's plan would help.",
+    label: "Understands your health",
+    description:
+      "Clinical but warm. Manages your health profile, dietary needs, and nutritional targets with evidence-based guidance.",
+  },
+  {
     emoji: "📋",
     name: "Dietitian",
-    role: "Meal Planning Expert",
+    role: "Meal Planner",
     quote:
-      "I've built your plan around high-protein dinners this week. Tuesday and Thursday are lighter — you mentioned wanting balance.",
+      "I chose this Thai recipe because you rated Thai Basil Chicken highly, and it hits your protein target while keeping prep under 30 minutes.",
     label: "Plans your meals",
     description:
-      "Builds personalized weekly plans based on your goals, preferences, and history.",
+      "Thoughtful and strategic. Creates personalized weekly meal plans and explains the reasoning behind every choice.",
   },
   {
     emoji: "👨‍🍳",
     name: "Chef",
-    role: "Cooking Guide",
+    role: "Kitchen Companion",
     quote:
-      "No buttermilk? No problem — mix 1 cup milk with 1 tbsp lemon juice and let it sit for 5 minutes.",
+      "Tonight's recipe has a 20-minute inactive time while the sauce simmers. Perfect moment to prep tomorrow's lunch.",
     label: "Guides your cooking",
     description:
-      "Walks you through recipes step by step. Ask questions mid-cook and get real answers.",
+      "An enthusiastic friend in your kitchen. Walks you through recipes step by step with pro tips and substitutions.",
   },
   {
     emoji: "🏆",
     name: "Coach",
     role: "Accountability Partner",
     quote:
-      "You've hit your protein target 4 days this week. One more day and you'll have your best week yet.",
+      "You hit your protein target every day this week. That's a first. Your consistency is paying off.",
     label: "Keeps you on track",
     description:
-      "Tracks your progress and nudges you toward your nutritional goals week over week.",
+      "Direct but supportive. Tracks your progress, celebrates your wins, and nudges you toward your goals.",
   },
 ];
 
@@ -40,14 +50,15 @@ export function Personas() {
             Your AI Team
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-[-0.4px] text-v2-text-primary sm:text-4xl">
-            Three experts. One app.
+            Four experts. One app.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-v2-text-secondary">
-            Each one specializes in a different part of your week.
+            Think of it as having a personal nutritionist, dietitian, chef, and
+            coach in your pocket.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-5 md:grid-cols-3">
+        <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {PERSONAS.map((persona) => (
             <div
               key={persona.name}

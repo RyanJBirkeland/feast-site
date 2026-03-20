@@ -8,7 +8,7 @@ export function Footer() {
               FEAST
             </p>
             <p className="mt-1 text-sm text-v2-text-tertiary">
-              Meal planning that feels like a friend.
+              Transform your relationship with food.
             </p>
           </div>
 

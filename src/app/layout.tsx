@@ -10,11 +10,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Feast — Your AI Meal Planning Companion",
   description:
-    "Feast plans your meals through natural conversation. Your AI team of Dietitian, Chef & Coach learns what you love and gets smarter every week.",
+    "The intelligent way to plan, shop, and cook. Your AI team of Nutritionist, Dietitian, Chef & Coach — all in your pocket.",
   openGraph: {
     title: "Feast — Your AI Meal Planning Companion",
     description:
-      "Your AI team of Dietitian, Chef & Coach. Meal planning through natural conversation.",
+      "AI-powered meal planning for the modern kitchen. Plan smarter, shop easier, cook better.",
     type: "website",
   },
 };

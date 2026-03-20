@@ -18,10 +18,10 @@ export function AppPreview() {
             See It In Action
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-[-0.4px] text-v2-text-primary sm:text-4xl">
-            Designed for your kitchen
+            Beautiful by design
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-v2-text-secondary">
-            A few screens from the app.
+            Minimalist, modern, and built for how you actually cook.
           </p>
         </div>
 
