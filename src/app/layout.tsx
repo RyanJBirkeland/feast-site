@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={inter.className} style={{ colorScheme: "dark" }}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
