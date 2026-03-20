@@ -8,11 +8,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Feast - Your Kitchen Companion",
+  title: "Feast - Your AI Kitchen Companion",
   description:
     "The intelligent way to plan, shop, and cook. Your AI team of Nutritionist, Dietitian, Chef & Coach — all in your pocket.",
   openGraph: {
-    title: "Feast - Your Kitchen Companion",
+    title: "Feast - Your AI Kitchen Companion",
     description:
       "AI-powered meal planning for the modern kitchen. Plan smarter, shop easier, cook better.",
     type: "website",
