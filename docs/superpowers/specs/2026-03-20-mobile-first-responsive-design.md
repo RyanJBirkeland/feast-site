@@ -13,29 +13,32 @@
 |----------|---------|-----------------|
 | Section vertical padding | `py-24` | `py-16 md:py-24` |
 
-Files affected: `Hero.tsx`, `AppPreview.tsx`, `HowItWorks.tsx`, `Features.tsx`, `Personas.tsx`, `Waitlist.tsx`
+Files affected: `AppPreview.tsx`, `HowItWorks.tsx`, `Features.tsx`, `Personas.tsx`, `Waitlist.tsx`
+
+**Note:** Hero.tsx uses asymmetric padding (`pt-32 pb-24`) and is handled separately below.
 
 ### Hero.tsx
 
 | Property | Current | Mobile-first fix |
 |----------|---------|-----------------|
-| Phone mockup width | `size="lg"` (260px fixed) | ~200px on mobile, 260px at `md:` |
+| Bottom padding | `pb-24` | `pb-16 md:pb-24` (keep `pt-32` unchanged for header clearance) |
+| Phone mockup width | `size="lg"` (260px fixed) | Pass `className="w-[200px] md:w-[260px]"` on the `<PhoneMockup>` call to override the default width. The `className` prop already exists on `PhoneMockup` and appends to the wrapper div. |
 | Section gap | `gap-16 md:gap-12` | `gap-10 md:gap-12` |
-| Body text max-width | `max-w-[420px]` | Remove or make responsive (420px exceeds 375px viewport) |
+| Body text max-width | `max-w-[420px]` | `max-w-full md:max-w-[420px]` |
 | CTA buttons width | Auto width | `w-full sm:w-auto` for better tap targets |
 
 ### AppPreview.tsx
 
 | Property | Current | Mobile-first fix |
 |----------|---------|-----------------|
-| Mobile phone width | `!w-[220px]` (hardcoded important) | `w-[200px] sm:w-[220px]` (drop `!important`) |
+| Mobile phone width (line ~72, inside `md:hidden` block only) | `!w-[220px]` | `w-[200px] sm:w-[220px]` (drop `!important`). Do NOT change the `!w-[200px]` on the desktop fan layout (line ~51). |
 | Body text size | `text-lg` | `text-base md:text-lg` |
 
 ### HowItWorks.tsx
 
 | Property | Current | Mobile-first fix |
 |----------|---------|-----------------|
-| Step description indent | `pl-[54px]` | `pl-10 sm:pl-[54px]` |
+| Step description indent | `pl-[54px]` | No change. 54px fits within 375px mobile viewport (327px content area minus 54px = 273px for text, which is sufficient). The indent correctly aligns with the step title past the 40px badge + 14px gap. |
 
 ### Features.tsx
 
