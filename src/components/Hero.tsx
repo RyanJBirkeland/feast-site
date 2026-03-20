@@ -1,48 +1,156 @@
+import { PhoneMockup } from "@/components/PhoneMockup";
+
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[var(--color-feast-cream)] px-6 pt-20">
-      <div className="mx-auto max-w-4xl text-center">
-        <h1 className="text-4xl font-bold leading-tight tracking-tight text-[var(--color-feast-charcoal)] sm:text-5xl md:text-6xl">
-          Meal planning that feels like
-          <br />
-          <span className="text-[var(--color-feast-green)]">
-            a knowledgeable friend
-          </span>
-        </h1>
-
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[var(--color-feast-warm-gray)] sm:text-xl">
-          Feast is your AI meal planning companion. It learns what you love,
-          remembers what you need, and plans your week through natural
-          conversation — not forms and checkboxes.
-        </p>
-
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <a
-            href="#waitlist"
-            className="rounded-full bg-[var(--color-feast-green)] px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-[var(--color-feast-green-light)] hover:shadow-xl"
-          >
-            Join the Waitlist
-          </a>
-          <a
-            href="#how-it-works"
-            className="text-base font-medium text-[var(--color-feast-green)] underline-offset-4 hover:underline"
-          >
-            See how it works →
-          </a>
+    <section className="relative overflow-hidden bg-v2-background px-6 pt-32 pb-24">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 md:flex-row md:gap-12">
+        {/* Left: Copy */}
+        <div className="flex-1 text-center md:text-left">
+          <p className="text-[11px] font-semibold uppercase tracking-[2px] text-v2-primary">
+            Your AI Meal Planning Companion
+          </p>
+          <h1 className="mt-4 text-4xl font-bold leading-[1.12] tracking-[-0.5px] text-v2-text-primary sm:text-5xl md:text-[56px]">
+            Your AI team of{" "}
+            <span className="text-v2-primary">
+              Dietitian, Chef
+              <br />
+              &amp; Coach
+            </span>
+          </h1>
+          <p className="mx-auto mt-5 max-w-[420px] text-[17px] leading-[1.7] text-v2-text-secondary md:mx-0">
+            Feast plans your meals through natural conversation — not forms and
+            checkboxes. It learns what you love, remembers what you need, and
+            gets smarter every week.
+          </p>
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:justify-start">
+            <a
+              href="#waitlist"
+              className="rounded-[20px] px-8 py-3.5 text-[15px] font-bold text-v2-background transition-all duration-200 active:scale-[0.97]"
+              style={{
+                background: "linear-gradient(135deg, #00D37F, #00A863)",
+                boxShadow: "0 4px 16px rgba(0,211,127,0.3)",
+              }}
+            >
+              Join the Waitlist
+            </a>
+            <a
+              href="#how-it-works"
+              className="rounded-[20px] border border-v2-border px-7 py-3.5 text-[15px] font-semibold text-v2-text-primary transition-all duration-200 hover:border-v2-border-light"
+            >
+              How It Works
+            </a>
+          </div>
         </div>
 
-        {/* App screenshot placeholder */}
-        <div className="mx-auto mt-16 max-w-sm">
-          <div className="aspect-[9/19] rounded-[2.5rem] border-4 border-[var(--color-feast-charcoal)]/10 bg-white p-3 shadow-2xl">
-            <div className="flex h-full flex-col items-center justify-center rounded-[2rem] bg-gradient-to-b from-[var(--color-feast-cream)] to-white">
-              <span className="text-5xl">🍽️</span>
-              <p className="mt-4 px-6 text-center text-sm text-[var(--color-feast-warm-gray)]">
-                App screenshot coming soon
-              </p>
-            </div>
-          </div>
+        {/* Right: Phone Mockup */}
+        <div className="relative">
+          {/* Green glow behind phone */}
+          <div
+            className="pointer-events-none absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(0,211,127,0.08) 0%, transparent 70%)",
+            }}
+          />
+          <PhoneMockup size="lg" glow>
+            <HeroPhoneContent />
+          </PhoneMockup>
         </div>
       </div>
     </section>
+  );
+}
+
+function HeroPhoneContent() {
+  return (
+    <div className="p-4 text-xs" style={{ minHeight: 420 }}>
+      {/* Status bar */}
+      <div className="mb-4 flex items-center justify-between">
+        <span className="text-[10px] text-v2-text-secondary">9:41</span>
+        <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-v2-primary">
+          FEAST
+        </span>
+        <span className="text-[10px] text-v2-text-secondary">100%</span>
+      </div>
+
+      {/* Greeting */}
+      <p className="mb-4 text-[18px] font-bold leading-[1.25] text-v2-text-primary">
+        Good evening!
+        <br />
+        Let&apos;s plan your week.
+      </p>
+
+      {/* Dietitian card */}
+      <div className="mb-3 rounded-[16px] border border-v2-border bg-v2-card p-3">
+        <div className="mb-2 flex items-center gap-2">
+          <div
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-v2-primary text-sm"
+          >
+            📋
+          </div>
+          <div>
+            <p className="text-[12px] font-semibold text-v2-text-primary">
+              Your Dietitian
+            </p>
+            <p className="text-[10px] text-v2-text-tertiary">
+              Meal Planning Expert
+            </p>
+          </div>
+        </div>
+        <p className="text-[11px] leading-[1.5] text-v2-text-secondary">
+          I&apos;ve planned 5 meals based on your preferences. High protein, low
+          carb — just how you like it.
+        </p>
+      </div>
+
+      {/* Recipe cards */}
+      <div className="mb-3 flex gap-2">
+        <div className="flex-1 rounded-xl border border-v2-border bg-v2-card p-2.5">
+          <div className="mb-2 flex h-[50px] items-center justify-center rounded-lg text-xl" style={{ background: "linear-gradient(135deg, #1a3a2a, #0a2a1a)" }}>
+            🥗
+          </div>
+          <p className="text-[10px] font-semibold text-v2-text-primary">
+            Thai Salad
+          </p>
+          <p className="text-[9px] text-v2-text-tertiary">25m · 420 cal</p>
+        </div>
+        <div className="flex-1 rounded-xl border border-v2-border bg-v2-card p-2.5">
+          <div className="mb-2 flex h-[50px] items-center justify-center rounded-lg text-xl" style={{ background: "linear-gradient(135deg, #2a2a1a, #1a1a0a)" }}>
+            🍗
+          </div>
+          <p className="text-[10px] font-semibold text-v2-text-primary">
+            Lemon Chicken
+          </p>
+          <p className="text-[9px] text-v2-text-tertiary">30m · 380 cal</p>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div
+        className="rounded-[14px] py-2.5 text-center text-[12px] font-bold text-v2-background"
+        style={{ background: "linear-gradient(135deg, #00D37F, #00A863)" }}
+      >
+        View Full Plan
+      </div>
+
+      {/* Tab bar */}
+      <div className="mt-4 flex justify-around border-t border-v2-border pt-3">
+        <div className="text-center">
+          <div className="text-sm">📅</div>
+          <p className="mt-0.5 text-[9px] text-v2-text-tertiary">Plan</p>
+        </div>
+        <div className="text-center">
+          <div className="text-sm">🏠</div>
+          <p className="mt-0.5 text-[9px] font-semibold text-v2-primary">
+            Today
+          </p>
+          <div className="mx-auto mt-0.5 h-0.5 w-4 rounded-full bg-v2-primary" />
+        </div>
+        <div className="text-center">
+          <div className="text-sm">🛒</div>
+          <p className="mt-0.5 text-[9px] text-v2-text-tertiary">Shop</p>
+        </div>
+      </div>
+    </div>
   );
 }
