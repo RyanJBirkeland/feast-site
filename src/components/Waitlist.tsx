@@ -33,13 +33,13 @@ export function Waitlist() {
 
   if (submitted) {
     return (
-      <section id="waitlist" className="bg-white px-6 py-24">
+      <section id="waitlist" className="bg-v2-surface px-6 py-24">
         <div className="mx-auto max-w-2xl text-center">
           <div className="text-5xl">🎉</div>
-          <h2 className="mt-4 text-3xl font-bold text-[var(--color-feast-charcoal)]">
+          <h2 className="mt-4 text-3xl font-bold text-v2-text-primary">
             You&apos;re on the list!
           </h2>
-          <p className="mt-4 text-lg text-[var(--color-feast-warm-gray)]">
+          <p className="mt-4 text-lg text-v2-text-secondary">
             We&apos;ll reach out when Feast is ready for you. In the meantime,
             keep an eye on your inbox.
           </p>
@@ -49,19 +49,31 @@ export function Waitlist() {
   }
 
   return (
-    <section id="waitlist" className="bg-white px-6 py-24">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-[var(--color-feast-charcoal)] sm:text-4xl">
+    <section id="waitlist" className="relative overflow-hidden bg-v2-surface px-6 py-24">
+      {/* Background glow */}
+      <div
+        className="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,211,127,0.08) 0%, transparent 60%)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-[500px] text-center">
+        <p className="text-[11px] font-semibold uppercase tracking-[2px] text-v2-primary">
+          Early Access
+        </p>
+        <h2 className="mt-3 text-3xl font-bold tracking-[-0.4px] text-v2-text-primary sm:text-4xl">
           Be the first to try Feast
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-[var(--color-feast-warm-gray)]">
+        <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-v2-text-secondary">
           Feast is currently in beta on TestFlight. Join the waitlist and
           we&apos;ll send you an invite when your spot opens up.
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row"
+          className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
         >
           <input
             type="email"
@@ -69,18 +81,22 @@ export function Waitlist() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
-            className="flex-1 rounded-full border border-[var(--color-feast-green)]/20 bg-[var(--color-feast-cream)] px-6 py-3.5 text-[var(--color-feast-charcoal)] placeholder:text-[var(--color-feast-warm-gray)]/60 focus:border-[var(--color-feast-green)] focus:outline-none focus:ring-2 focus:ring-[var(--color-feast-green)]/20"
+            className="flex-1 rounded-[16px] border border-v2-border bg-v2-card px-5 py-3.5 text-v2-text-primary placeholder:text-v2-text-tertiary focus:border-v2-primary focus:outline-none focus:ring-2 focus:ring-v2-primary/20"
           />
           <button
             type="submit"
             disabled={loading}
-            className="rounded-full bg-[var(--color-feast-green)] px-8 py-3.5 font-semibold text-white shadow-lg transition-all hover:bg-[var(--color-feast-green-light)] hover:shadow-xl disabled:opacity-60"
+            className="rounded-[16px] px-7 py-3.5 text-[15px] font-bold text-v2-background transition-all duration-200 active:scale-[0.97] disabled:opacity-60"
+            style={{
+              background: "linear-gradient(135deg, #00D37F, #00A863)",
+              boxShadow: "0 4px 16px rgba(0,211,127,0.3)",
+            }}
           >
             {loading ? "Joining..." : "Join Waitlist"}
           </button>
         </form>
 
-        <p className="mt-4 text-sm text-[var(--color-feast-warm-gray)]/60">
+        <p className="mt-4 text-[13px] text-v2-text-tertiary">
           No spam. Just an invite when it&apos;s your turn.
         </p>
       </div>
