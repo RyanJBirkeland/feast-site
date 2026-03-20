@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
-:root {
-  --color-feast-green: #2d6a4f;
-  --color-feast-green-light: #40916c;
-  --color-feast-cream: #fefae0;
-  --color-feast-orange: #e76f51;
-  --color-feast-charcoal: #1b1b1e;
-  --color-feast-warm-gray: #6b705c;
+@theme {
+  --color-v2-background: #050505;
+  --color-v2-surface: #111113;
+  --color-v2-card: #1A1A1D;
+  --color-v2-card-hover: #222226;
+  --color-v2-border: #2A2A2E;
+  --color-v2-border-light: #38383D;
+  --color-v2-text-primary: #F5F5F7;
+  --color-v2-text-secondary: #98989F;
+  --color-v2-text-tertiary: #5C5C63;
+  --color-v2-primary: #00D37F;
+  --color-v2-primary-light: #33EDAA;
+  --color-v2-primary-dark: #00A863;
+  --color-v2-primary-muted: rgba(0, 211, 127, 0.12);
+  --color-v2-primary-glow: rgba(0, 211, 127, 0.25);
 }
 
 html {
@@ -14,7 +22,8 @@ html {
 }
 
 body {
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  background-color: #050505;
+  color: #F5F5F7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

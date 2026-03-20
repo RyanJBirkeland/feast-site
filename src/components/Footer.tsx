@@ -1,31 +1,40 @@
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--color-feast-green)]/10 bg-[var(--color-feast-cream)] px-6 py-12">
+    <footer className="border-t border-white/[0.06] bg-v2-background px-6 py-12">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div>
-            <p className="text-lg font-bold text-[var(--color-feast-green)]">
-              🍽️ Feast
+            <p className="text-base font-bold tracking-[0.3em] uppercase text-v2-primary">
+              FEAST
             </p>
-            <p className="mt-1 text-sm text-[var(--color-feast-warm-gray)]">
-              Meal planning that feels like a friend.
+            <p className="mt-1 text-sm text-v2-text-tertiary">
+              Transform your relationship with food.
             </p>
           </div>
 
-          <div className="flex gap-6 text-sm text-[var(--color-feast-warm-gray)]">
-            <a href="mailto:ryan@rbtechnologies.dev" className="hover:text-[var(--color-feast-green)]">
+          <div className="flex gap-6 text-sm text-v2-text-tertiary">
+            <a
+              href="mailto:ryan@rbtechnologies.dev"
+              className="transition-colors duration-200 hover:text-v2-primary"
+            >
               Contact
             </a>
-            <a href="/privacy" className="hover:text-[var(--color-feast-green)]">
+            <a
+              href="/privacy"
+              className="transition-colors duration-200 hover:text-v2-primary"
+            >
               Privacy
             </a>
-            <a href="/terms" className="hover:text-[var(--color-feast-green)]">
+            <a
+              href="/terms"
+              className="transition-colors duration-200 hover:text-v2-primary"
+            >
               Terms
             </a>
           </div>
         </div>
 
-        <div className="mt-8 text-center text-xs text-[var(--color-feast-warm-gray)]/60">
+        <div className="mt-8 border-t border-white/[0.06] pt-6 text-center text-xs text-v2-text-tertiary">
           &copy; {new Date().getFullYear()} R.B Technologies LLC. All rights
           reserved.
         </div>
