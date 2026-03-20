@@ -1,6 +1,21 @@
-const PERSONAS = [
+import {
+  HeartIcon,
+  ClipboardDocumentListIcon,
+  FireIcon,
+  TrophyIcon,
+} from "@heroicons/react/24/outline";
+import type { ComponentType, SVGProps } from "react";
+
+const PERSONAS: {
+  Icon: ComponentType<SVGProps<SVGSVGElement>>;
+  name: string;
+  role: string;
+  quote: string;
+  label: string;
+  description: string;
+}[] = [
   {
-    emoji: "🩺",
+    Icon: HeartIcon,
     name: "Nutritionist",
     role: "Health Expert",
     quote:
@@ -10,7 +25,7 @@ const PERSONAS = [
       "Clinical but warm. Manages your health profile, dietary needs, and nutritional targets with evidence-based guidance.",
   },
   {
-    emoji: "📋",
+    Icon: ClipboardDocumentListIcon,
     name: "Dietitian",
     role: "Meal Planner",
     quote:
@@ -20,7 +35,7 @@ const PERSONAS = [
       "Thoughtful and strategic. Creates personalized weekly meal plans and explains the reasoning behind every choice.",
   },
   {
-    emoji: "👨‍🍳",
+    Icon: FireIcon,
     name: "Chef",
     role: "Kitchen Companion",
     quote:
@@ -30,7 +45,7 @@ const PERSONAS = [
       "An enthusiastic friend in your kitchen. Walks you through recipes step by step with pro tips and substitutions.",
   },
   {
-    emoji: "🏆",
+    Icon: TrophyIcon,
     name: "Coach",
     role: "Accountability Partner",
     quote:
@@ -76,12 +91,12 @@ export function Personas() {
               {/* Avatar + name */}
               <div className="relative mb-5 flex items-center gap-3.5">
                 <div
-                  className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-v2-primary text-2xl"
+                  className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-v2-primary"
                   style={{
                     boxShadow: "0 4px 12px rgba(0,211,127,0.25)",
                   }}
                 >
-                  {persona.emoji}
+                  <persona.Icon className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <p className="text-lg font-bold text-v2-text-primary">

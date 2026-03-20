@@ -1,4 +1,8 @@
 import Image from "next/image";
+import {
+  ClipboardDocumentListIcon,
+  FireIcon,
+} from "@heroicons/react/24/outline";
 import { PhoneMockup } from "@/components/PhoneMockup";
 
 const STEPS = [
@@ -104,7 +108,9 @@ function Step1Phone() {
         FEAST
       </div>
       <div className="mb-2 flex items-center gap-1.5">
-        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-v2-primary text-[8px]">📋</div>
+        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-v2-primary">
+          <ClipboardDocumentListIcon className="h-3 w-3 text-white" />
+        </div>
         <span className="text-[8px] font-semibold text-v2-text-primary">Dietitian</span>
       </div>
       <div className="mb-1.5 rounded-lg border border-v2-border bg-v2-card p-2">
@@ -148,7 +154,9 @@ function Step3Phone() {
         FEAST
       </div>
       <div className="mb-2 flex items-center gap-1.5">
-        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-v2-primary text-[8px]">👨‍🍳</div>
+        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-v2-primary">
+          <FireIcon className="h-3 w-3 text-white" />
+        </div>
         <span className="text-[8px] font-semibold text-v2-text-primary">Chef</span>
       </div>
       <p className="mb-1 font-semibold text-v2-text-primary">Step 3 of 6</p>

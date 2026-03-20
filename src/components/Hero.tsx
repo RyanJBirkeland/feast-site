@@ -1,3 +1,11 @@
+import {
+  ClipboardDocumentListIcon,
+  SparklesIcon,
+  FireIcon,
+  CalendarDaysIcon,
+  HomeIcon,
+  ShoppingCartIcon,
+} from "@heroicons/react/24/outline";
 import { PhoneMockup } from "@/components/PhoneMockup";
 
 export function Hero() {
@@ -81,9 +89,9 @@ function HeroPhoneContent() {
       <div className="mb-3 rounded-[16px] border border-v2-border bg-v2-card p-3">
         <div className="mb-2 flex items-center gap-2">
           <div
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-v2-primary text-sm"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-v2-primary"
           >
-            📋
+            <ClipboardDocumentListIcon className="h-4 w-4 text-white" />
           </div>
           <div>
             <p className="text-[12px] font-semibold text-v2-text-primary">
@@ -103,8 +111,8 @@ function HeroPhoneContent() {
       {/* Recipe cards */}
       <div className="mb-3 flex gap-2">
         <div className="flex-1 rounded-xl border border-v2-border bg-v2-card p-2.5">
-          <div className="mb-2 flex h-[50px] items-center justify-center rounded-lg text-xl" style={{ background: "linear-gradient(135deg, #1a3a2a, #0a2a1a)" }}>
-            🥗
+          <div className="mb-2 flex h-[50px] items-center justify-center rounded-lg" style={{ background: "linear-gradient(135deg, #1a3a2a, #0a2a1a)" }}>
+            <SparklesIcon className="h-4 w-4 text-white/70" />
           </div>
           <p className="text-[10px] font-semibold text-v2-text-primary">
             Thai Salad
@@ -112,8 +120,8 @@ function HeroPhoneContent() {
           <p className="text-[9px] text-v2-text-tertiary">25m · 420 cal</p>
         </div>
         <div className="flex-1 rounded-xl border border-v2-border bg-v2-card p-2.5">
-          <div className="mb-2 flex h-[50px] items-center justify-center rounded-lg text-xl" style={{ background: "linear-gradient(135deg, #2a2a1a, #1a1a0a)" }}>
-            🍗
+          <div className="mb-2 flex h-[50px] items-center justify-center rounded-lg" style={{ background: "linear-gradient(135deg, #2a2a1a, #1a1a0a)" }}>
+            <FireIcon className="h-4 w-4 text-white/70" />
           </div>
           <p className="text-[10px] font-semibold text-v2-text-primary">
             Lemon Chicken
@@ -133,18 +141,24 @@ function HeroPhoneContent() {
       {/* Tab bar */}
       <div className="mt-4 flex justify-around border-t border-v2-border pt-3">
         <div className="text-center">
-          <div className="text-sm">📅</div>
+          <div className="flex justify-center">
+            <CalendarDaysIcon className="h-4 w-4 text-v2-text-tertiary" />
+          </div>
           <p className="mt-0.5 text-[9px] text-v2-text-tertiary">Plan</p>
         </div>
         <div className="text-center">
-          <div className="text-sm">🏠</div>
+          <div className="flex justify-center">
+            <HomeIcon className="h-4 w-4 text-v2-primary" />
+          </div>
           <p className="mt-0.5 text-[9px] font-semibold text-v2-primary">
             Today
           </p>
           <div className="mx-auto mt-0.5 h-0.5 w-4 rounded-full bg-v2-primary" />
         </div>
         <div className="text-center">
-          <div className="text-sm">🛒</div>
+          <div className="flex justify-center">
+            <ShoppingCartIcon className="h-4 w-4 text-v2-text-tertiary" />
+          </div>
           <p className="mt-0.5 text-[9px] text-v2-text-tertiary">Shop</p>
         </div>
       </div>

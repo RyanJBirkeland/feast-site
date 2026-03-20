@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 export function Waitlist() {
   const [email, setEmail] = useState("");
@@ -35,7 +36,7 @@ export function Waitlist() {
     return (
       <section id="waitlist" className="bg-v2-surface px-6 py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="text-5xl">🎉</div>
+          <CheckCircleIcon className="mx-auto h-12 w-12 text-v2-primary" />
           <h2 className="mt-4 text-3xl font-bold text-v2-text-primary">
             You&apos;re on the list!
           </h2>
