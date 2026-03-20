@@ -44,3 +44,18 @@ NEXT_PUBLIC_SITE_LIVE=true npm run dev   # Dev with full site visible
 npm run build                            # Production build
 npm run lint                             # ESLint
 ```
+
+## Playwright MCP (Visual Testing)
+
+The `playwright@claude-plugins-official` plugin is enabled globally in `~/.claude/settings.json`. It provides browser automation tools via MCP for previewing and visually verifying the site.
+
+**Key tools:**
+- `browser_navigate` — Open a URL (e.g., `http://localhost:3000` or `https://feast-meals.com`)
+- `browser_take_screenshot` — Capture viewport or full-page screenshots
+- `browser_snapshot` — Get an accessibility tree snapshot (use for interactions)
+- `browser_evaluate` — Run JS in the page (inspect computed styles, debug CSS)
+- `browser_click`, `browser_fill_form` — Interact with elements using `ref` from snapshots
+
+**Workflow:** Start the dev server (`npm run dev`), navigate to localhost:3000, take screenshots to verify visual changes. Screenshots are saved to `.playwright-mcp/` (gitignored).
+
+**Known issue:** Turbopack can serve stale CSS from the `.next` cache. If theme tokens look wrong, kill the dev server and `rm -rf .next` before restarting.

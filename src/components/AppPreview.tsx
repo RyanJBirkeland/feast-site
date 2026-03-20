@@ -11,7 +11,7 @@ import { PhoneMockup } from "@/components/PhoneMockup";
 
 export function AppPreview() {
   return (
-    <section id="preview" className="relative overflow-hidden bg-v2-background px-6 py-24">
+    <section id="preview" className="relative overflow-hidden bg-v2-background px-6 py-16 md:py-24">
       {/* Background glow */}
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 h-[300px] w-[600px] -translate-x-1/2 -translate-y-1/2"
@@ -29,7 +29,7 @@ export function AppPreview() {
           <h2 className="mt-3 text-3xl font-bold tracking-[-0.4px] text-v2-text-primary sm:text-4xl">
             Beautiful by design
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-v2-text-secondary">
+          <p className="mx-auto mt-4 max-w-xl text-base md:text-lg text-v2-text-secondary">
             Minimalist, modern, and built for how you actually cook.
           </p>
         </div>
@@ -69,7 +69,7 @@ export function AppPreview() {
 
         {/* Mobile: single centered phone */}
         <div className="mt-16 flex justify-center md:hidden">
-          <PhoneMockup size="md" glow className="!w-[220px]">
+          <PhoneMockup size="md" glow className="!w-[200px] sm:!w-[220px]">
             <PlanScreen />
           </PhoneMockup>
         </div>

@@ -58,7 +58,7 @@ const PERSONAS: {
 
 export function Personas() {
   return (
-    <section id="team" className="bg-v2-background px-6 py-24">
+    <section id="team" className="bg-v2-background px-6 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[2px] text-v2-primary">
@@ -77,7 +77,7 @@ export function Personas() {
           {PERSONAS.map((persona) => (
             <div
               key={persona.name}
-              className="relative overflow-hidden rounded-[20px] border border-v2-border bg-v2-card p-7"
+              className="relative overflow-hidden rounded-[20px] border border-v2-border bg-v2-card p-5 md:p-7"
             >
               {/* Glow accent */}
               <div
