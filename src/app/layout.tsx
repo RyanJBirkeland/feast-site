@@ -1,25 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Feast — Meal Planning That Feels Like a Friend",
+  title: "Feast - Your AI Kitchen Companion",
   description:
-    "Feast is the conversational meal planning companion that remembers you, adapts to you, and makes eating well effortless.",
+    "The intelligent way to plan, shop, and cook. Your AI team of Nutritionist, Dietitian, Chef & Coach — all in your pocket.",
   openGraph: {
-    title: "Feast — Meal Planning That Feels Like a Friend",
+    title: "Feast - Your AI Kitchen Companion",
     description:
-      "The AI meal planning companion that remembers you, adapts to you, and makes eating well effortless.",
+      "AI-powered meal planning for the modern kitchen. Plan smarter, shop easier, cook better.",
     type: "website",
   },
 };
@@ -30,15 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
