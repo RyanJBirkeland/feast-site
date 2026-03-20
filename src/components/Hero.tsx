@@ -10,8 +10,8 @@ import { PhoneMockup } from "@/components/PhoneMockup";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-v2-background px-6 pt-32 pb-24">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 md:flex-row md:gap-12">
+    <section className="relative overflow-hidden bg-v2-background px-6 pt-32 pb-16 md:pb-24">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 md:gap-12">
         {/* Left: Copy */}
         <div className="flex-1 text-center md:text-left">
           <p className="text-[11px] font-semibold uppercase tracking-[2px] text-v2-primary">
@@ -22,7 +22,7 @@ export function Hero() {
             <br />
             <span className="text-v2-primary">Cook better.</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-[420px] text-[17px] leading-[1.7] text-v2-text-secondary md:mx-0">
+          <p className="mx-auto mt-5 max-w-full md:max-w-[420px] text-[17px] leading-[1.7] text-v2-text-secondary md:mx-0">
             Feast is the meal planning companion that feels like a knowledgeable
             friend — not an app. Your personal team of Nutritionist, Dietitian,
             Chef &amp; Coach, all in your pocket.
@@ -30,7 +30,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:justify-start">
             <a
               href="#waitlist"
-              className="rounded-[20px] px-8 py-3.5 text-[15px] font-bold text-v2-background transition-all duration-200 active:scale-[0.97]"
+              className="w-full sm:w-auto text-center rounded-[20px] px-8 py-3.5 text-[15px] font-bold text-v2-background transition-all duration-200 active:scale-[0.97]"
               style={{
                 background: "linear-gradient(135deg, #00D37F, #00A863)",
                 boxShadow: "0 4px 16px rgba(0,211,127,0.3)",
@@ -40,7 +40,7 @@ export function Hero() {
             </a>
             <a
               href="#how-it-works"
-              className="rounded-[20px] border border-v2-border px-7 py-3.5 text-[15px] font-semibold text-v2-text-primary transition-all duration-200 hover:border-v2-border-light"
+              className="w-full sm:w-auto text-center rounded-[20px] border border-v2-border px-7 py-3.5 text-[15px] font-semibold text-v2-text-primary transition-all duration-200 hover:border-v2-border-light"
             >
               How It Works
             </a>
@@ -57,7 +57,7 @@ export function Hero() {
                 "radial-gradient(circle, rgba(0,211,127,0.08) 0%, transparent 70%)",
             }}
           />
-          <PhoneMockup size="lg" glow>
+          <PhoneMockup size="lg" glow className="!w-[200px] md:!w-[260px]">
             <HeroPhoneContent />
           </PhoneMockup>
         </div>
