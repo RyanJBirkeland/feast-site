@@ -1,17 +1,12 @@
-import Image from "next/image";
-
 export function Footer() {
   return (
     <footer className="border-t border-white/[0.06] bg-v2-background px-6 py-12">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div>
-            <div className="flex items-center gap-2">
-              <Image src="/feast-logo.svg" alt="" width={24} height={24} className="rounded-md" />
-              <span className="text-base font-bold tracking-[0.3em] uppercase text-v2-primary">
-                FEAST
-              </span>
-            </div>
+            <p className="text-base font-bold tracking-[0.3em] uppercase text-v2-primary">
+              FEAST
+            </p>
             <p className="mt-1 text-sm text-v2-text-tertiary">
               Transform your relationship with food.
             </p>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const NAV_LINKS = [
@@ -21,9 +20,8 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a
           href="#"
-          className="flex items-center gap-2 text-lg font-bold tracking-[0.3em] uppercase text-v2-primary"
+          className="text-lg font-bold tracking-[0.3em] uppercase text-v2-primary"
         >
-          <Image src="/feast-logo.svg" alt="" width={28} height={28} className="rounded-lg" />
           FEAST
         </a>
 
