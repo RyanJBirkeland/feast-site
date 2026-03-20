@@ -34,7 +34,7 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-v2-surface px-6 py-24">
+    <section id="how-it-works" className="bg-v2-surface px-6 py-16 md:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[2px] text-v2-primary">
