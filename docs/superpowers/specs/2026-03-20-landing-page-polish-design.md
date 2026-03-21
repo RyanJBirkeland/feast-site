@@ -126,8 +126,9 @@ Copy these to `public/screenshots/` with clean filenames:
 ### Image Sizing
 
 - PhoneMockup renders at fixed widths (sm: 160px, md: 180px, lg: 260px) with responsive overrides
-- Images should use `fill` layout with `object-cover` inside a relative-positioned container
-- The PhoneMockup inner container already applies `overflow-hidden` with the correct border radius per size — no additional border-radius classes needed on the Image
+- PhoneMockup's inner container already has `overflow-hidden` with the correct border radius — no additional rounding needed
+- Use `<Image>` with explicit `width` and `height` props (not `fill`) sized to match the phone mockup content area. Use `width={260} height={560}` for lg, `width={180} height={390}` for md, `width={160} height={340}` for sm — these approximate the iPhone aspect ratio (~0.46). Set `className="w-full h-auto"` so the image scales to fill the container width
+- Add `alt` text describing the screen (e.g., `alt="Feast app chat with Dietitian"`)
 
 ### Setup
 
