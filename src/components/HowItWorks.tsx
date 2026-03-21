@@ -44,7 +44,7 @@ export function HowItWorks() {
             Four steps. No learning curve.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-v2-text-secondary">
-            From discovery to delivery — Feast handles the entire food journey.
+            Just talk, and Feast takes care of the rest.
           </p>
         </div>
 
