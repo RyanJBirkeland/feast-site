@@ -22,7 +22,7 @@ export function AppPreview() {
             Simple enough for mid-recipe. Powerful enough for your whole week.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base md:text-lg text-v2-text-secondary">
-            Designed to get out of the way so you can focus on the food.
+            Designed to take the effort out of making a home-cooked meal.
           </p>
         </div>
 
