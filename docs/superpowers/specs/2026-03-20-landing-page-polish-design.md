@@ -1,7 +1,7 @@
 # Landing Page Polish Pass — Design Spec
 
 **Date:** 2026-03-20
-**Branch:** `feat/landing-page-polish` (from `feat/mobile-first-responsive`)
+**Branch:** Continue on `feat/mobile-first-responsive`
 **Scope:** Copy refinement + screenshot integration (placeholder images now, final screenshots later)
 
 ---
@@ -81,7 +81,7 @@ All changes target section headings, sub-copy, and feature card descriptions tha
 
 ### Copy Implementation Approach
 
-Dispatch a marketing-focused agent to refine these proposals further, using brand docs as foundation (`feast/docs/VISION.md`, `feast/docs/business/INVESTOR_PITCH.md`, `feast/docs/business/APP_STORE_DESCRIPTION.md`, `feast/docs/product/HEALTH_TEAM_SPEC.md`, `feast/marketing/MARKETING_PLAN.md`). The agent should write web-native copy that's warm and conversational — not copy-pasted from brand docs, not corporate.
+Use the exact copy strings provided above — these are the final approved copy. No further refinement needed. Apply them as literal string replacements in each component file.
 
 ---
 
@@ -108,19 +108,31 @@ Copy these to `public/screenshots/` with clean filenames:
 
 **HowItWorks.tsx:**
 - Remove `Step1Phone`, `Step2Phone`, `Step3Phone`, `Step4Phone` components
-- Replace all four with `<Image>` tags — use `chat.png` and `planning.png` as placeholders
+- Replace with `<Image>` tags using this placeholder mapping:
+  - Step 1 (Have a conversation): `chat.png`
+  - Step 2 (Get a plan that fits): `planning.png`
+  - Step 3 (Cook with confidence): `chat.png`
+  - Step 4 (Shop in one tap): `planning.png`
 - These will be swapped for specific screenshots later (conversation, meal plan, cooking mode, grocery list)
 
 **AppPreview.tsx:**
 - Remove `TodayScreen`, `PlanScreen`, `RecipesScreen` components
-- Replace all three with `<Image>` tags — use the two placeholder screenshots
+- Replace with `<Image>` tags using this placeholder mapping:
+  - Left phone (Today): `chat.png`
+  - Center phone (Plan, hero position with glow): `planning.png`
+  - Right phone (Recipes): `chat.png`
 - These will be swapped for specific screenshots later (Today, Plan, Recipes views)
 
 ### Image Sizing
 
 - PhoneMockup renders at fixed widths (sm: 160px, md: 180px, lg: 260px) with responsive overrides
 - Images should use `fill` layout with `object-cover` inside a relative-positioned container
-- Match inner border radius from PhoneMockup sizes (sm: `rounded-[14px]`, md: `rounded-[18px]`, lg: `rounded-[24px]`) via `overflow-hidden` on the image container or `className` on the Image
+- The PhoneMockup inner container already applies `overflow-hidden` with the correct border radius per size — no additional border-radius classes needed on the Image
+
+### Setup
+
+- Create `public/screenshots/` directory
+- Copy the two source images from `~/Desktop/FEAST Screenshots/` into `public/screenshots/` with clean filenames (`chat.png`, `planning.png`)
 
 ### Cleanup
 
