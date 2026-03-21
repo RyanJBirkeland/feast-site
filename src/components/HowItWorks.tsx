@@ -12,7 +12,7 @@ const STEPS = [
     number: "02",
     title: "Get a plan that fits",
     description:
-      "Your Dietitian builds a personalized 7-day meal plan based on your conversation, your history, and your nutritional goals. Don't like something? Swap it with a tap.",
+      "Your Dietitian builds a personalized meal plan based on your conversation, your history, and your nutritional goals. Don't like something? Swap it with a tap.",
   },
   {
     number: "03",
