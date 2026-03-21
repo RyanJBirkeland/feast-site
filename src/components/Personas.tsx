@@ -19,7 +19,7 @@ const PERSONAS: {
     name: "Nutritionist",
     role: "Health Expert",
     quote:
-      "You've been consistently low on fiber — averaging 18g vs. your 25g target. Adding more legumes to next week's plan would help.",
+      "I swapped in a yogurt parfait with fruit and toast for breakfast tomorrow since you've been a little low on fiber this week. Should get you back on track without trying.",
     label: "Understands your health",
     description:
       "Precise but warm. Manages your health profile, dietary needs, and nutritional targets with evidence-based guidance.",
@@ -29,7 +29,7 @@ const PERSONAS: {
     name: "Dietitian",
     role: "Meal Planner",
     quote:
-      "I chose this Thai recipe because you rated Thai Basil Chicken highly, and it hits your protein target while keeping prep under 30 minutes.",
+      "I put Thai Basil Chicken on Wednesday since you rated it a 5 last time. It's 38g protein, 25 minutes, and your partner likes it too.",
     label: "Plans your meals",
     description:
       "Thoughtful and strategic. Creates personalized weekly meal plans and explains the reasoning behind every choice.",
