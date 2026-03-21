@@ -39,7 +39,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-white/[0.06] pt-6 text-center text-xs text-v2-text-tertiary">
-          {new Date().getFullYear()} R.B Technologies LLC
+          {new Date().getFullYear()} R.B Technologies
         </div>
       </div>
     </footer>
