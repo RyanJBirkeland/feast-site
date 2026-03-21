@@ -14,7 +14,8 @@ This is the **Feast landing page** — the public-facing marketing site for the 
 - **Hosting:** Vercel (auto-deploys from `main`)
 - **Company:** R.B Technologies LLC
 - **Feast app repo:** `/Users/RBTECHBOT/Documents/Repositories/feast` (React Native/Expo)
-- **Feature flag:** `NEXT_PUBLIC_SITE_LIVE=true` shows full site; unset shows "Coming Soon"
+- **No code sharing:** Feast app uses Tamagui (React Native), incompatible with Next.js web components. Use screenshots for realistic phone mockups, not ported code.
+- **Feature flags:** `NEXT_PUBLIC_SHOW_INFO_LINKS=true` shows Contact/Privacy/Terms in footer (hidden until pages exist)
 
 ## Design System
 
@@ -40,7 +41,6 @@ Warm, conversational, professional-yet-approachable. Copy comes from the Feast a
 
 ```bash
 npm run dev                              # Dev server on :3000
-NEXT_PUBLIC_SITE_LIVE=true npm run dev   # Dev with full site visible
 npm run build                            # Production build
 npm run lint                             # ESLint
 ```
@@ -59,3 +59,34 @@ The `playwright@claude-plugins-official` plugin is enabled globally in `~/.claud
 **Workflow:** Start the dev server (`npm run dev`), navigate to localhost:3000, take screenshots to verify visual changes. Screenshots are saved to `.playwright-mcp/` (gitignored).
 
 **Known issue:** Turbopack can serve stale CSS from the `.next` cache. If theme tokens look wrong, kill the dev server and `rm -rf .next` before restarting.
+
+**Known issue:** If port 3000 is occupied (stale process), Next.js silently switches to 3002+. Check terminal output for the actual port before navigating with Playwright.
+
+## Waitlist Backend
+
+- **Supabase project:** Feast (iorjhnpjpqimklrpwimf.supabase.co)
+- **Table:** `waitlist` (email, source, created_at) with RLS — anon can insert, not read
+- **API route:** `src/app/api/waitlist/route.ts` — POSTs to Supabase REST API
+- **Vercel env vars:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` (production only)
+- **Fallback:** On API failure, Waitlist component opens mailto: link so signup isn't lost
+
+## Copy Guidelines
+
+- Use brand docs as inspiration, not copy-paste — write web-native, conversational copy
+- Don't mention Instacart or specific partners without explicit approval
+- No copyright claims (no (C) symbol, no "All rights reserved")
+- Avoid jargon: "synthesize", "transactional", "journey" — use plain language
+- `&apos;` only works in JSX markup, not in JS strings — use regular apostrophes in string literals
+- Don't repeat the same word across section headings (e.g., "actually" in two headings)
+
+## Deployment
+
+- Vercel auto-deploys from `main` branch
+- `vercel --prod` to manually trigger production deploy (needed after adding env vars)
+- Env vars set via `vercel env add <NAME> production`
+- PR merges to main create Preview deploys, not Production — if env vars are production-only, use `vercel --prod`
+
+## Component Gotchas
+
+- **PhoneMockup width overrides:** `PhoneMockup.tsx` applies `s.width` from a `SIZES` lookup. To override via `className`, you must use `!important` (e.g., `className="!w-[200px]"`), otherwise Tailwind specificity is unpredictable.
+- **Hero `pt-32`:** Hero section uses asymmetric padding (`pt-32 pb-24`) for fixed header clearance. Don't replace with `py-*`.
