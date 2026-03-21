@@ -47,7 +47,7 @@ export function HowItWorks() {
             Four steps. No learning curve.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-v2-text-secondary">
-            Just explain, and Feast takes care of the rest.
+            Describe what you&apos;re feeling, and Feast handles the rest.
           </p>
         </div>
 
