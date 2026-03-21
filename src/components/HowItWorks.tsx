@@ -6,7 +6,7 @@ const STEPS = [
     number: "01",
     title: "Have a conversation",
     description:
-      'Open Feast and tell your Dietitian what you\'re in the mood for. "I want something high-protein this week" or "My partner is vegetarian on Tuesdays" — just talk naturally.',
+      'Open Feast and tell your Dietitian what you\'re in the mood for. "I\'m tired of chicken breast, surprise me" or "We\'re doing date night Friday, make it fancy" — just talk naturally.',
   },
   {
     number: "02",
