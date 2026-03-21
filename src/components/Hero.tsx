@@ -10,7 +10,7 @@ export function Hero() {
           <p className="text-[11px] font-semibold uppercase tracking-[2px] text-v2-primary">
             AI-Powered Meal Planning
           </p>
-          <p className="mt-4 text-2xl font-bold tracking-[0.3em] uppercase text-v2-text-primary sm:text-3xl">
+          <p className="mt-4 text-5xl font-bold tracking-[0.3em] uppercase text-v2-primary sm:text-6xl md:text-7xl">
             FEAST
           </p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.12] tracking-[-0.5px] text-v2-text-primary sm:text-5xl md:text-[56px]">
