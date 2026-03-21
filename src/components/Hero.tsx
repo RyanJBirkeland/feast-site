@@ -16,8 +16,11 @@ export function Hero() {
             <span className="text-v2-primary">Cook better.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-full md:max-w-[420px] text-[17px] leading-[1.7] text-v2-text-secondary md:mx-0">
-            Feast covers your entire food journey: planning, cooking,
-            and shopping, all in one app. Tell it what you&apos;re craving,
+            Feast covers your entire food journey:{" "}
+            <span className="font-semibold text-v2-text-primary">
+              planning, cooking, and shopping
+            </span>
+            , all in one app. Tell it what you&apos;re craving,
             what you&apos;re working toward, or what&apos;s in your fridge
             — and it figures out the rest.
           </p>
