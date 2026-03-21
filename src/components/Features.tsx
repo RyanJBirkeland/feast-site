@@ -28,7 +28,7 @@ const FEATURES = [
     icon: ShoppingCartIcon,
     title: "Groceries, Handled",
     description:
-      "Your meal plan becomes a grocery list — deduplicated, organized by category, and ready to send to Instacart with one tap. No more 41-minute trips forgetting items.",
+      "Your meal plan becomes a grocery list — deduplicated, organized by category, and ready for pickup or delivery. No more 41-minute trips forgetting items.",
   },
 ];
 
