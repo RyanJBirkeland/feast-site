@@ -38,11 +38,11 @@ export function Waitlist() {
         <div className="mx-auto max-w-2xl text-center">
           <CheckCircleIcon className="mx-auto h-12 w-12 text-v2-primary" />
           <h2 className="mt-4 text-3xl font-bold text-v2-text-primary">
-            You&apos;re on the list!
+            You&apos;re in.
           </h2>
           <p className="mt-4 text-lg text-v2-text-secondary">
-            We&apos;ll reach out when Feast is ready for you. In the meantime,
-            keep an eye on your inbox.
+            We&apos;ll reach out when your spot opens up. In the meantime,
+            your future Dietitian is already looking forward to meeting you.
           </p>
         </div>
       </section>
