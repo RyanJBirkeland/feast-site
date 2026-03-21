@@ -92,7 +92,7 @@ export function HowItWorks() {
               {/* Connector */}
               {i < STEPS.length - 1 && (
                 <div
-                  className="mx-auto my-8 h-6 w-0.5 rounded-full"
+                  className="mx-auto my-8 h-16 w-0.5 rounded-full"
                   style={{
                     background:
                       "linear-gradient(to bottom, #00D37F, #2A2A2E)",
