@@ -24,7 +24,7 @@ const STEPS = [
     number: "04",
     title: "Shop in one tap",
     description:
-      "Your meal plan becomes a grocery list — deduplicated, organized by category, and ready to send to Instacart for delivery. No more wandering the aisles.",
+      "Your recipes synthesize into a single grocery list, organized by category. Shop it yourself or send it out for pickup or delivery.",
   },
 ];
 
