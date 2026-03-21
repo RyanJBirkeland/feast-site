@@ -28,7 +28,7 @@ const FEATURES = [
     icon: ShoppingCartIcon,
     title: "Groceries, Handled",
     description:
-      "Your meal plan becomes a grocery list — deduplicated, organized by category, and ready for pickup or delivery. No more 41-minute trips forgetting items.",
+      "Your recipes synthesize into a single grocery list, organized by category. Shop it yourself, or send it out for pickup or delivery. No more 41-minute trips forgetting items.",
   },
 ];
 
