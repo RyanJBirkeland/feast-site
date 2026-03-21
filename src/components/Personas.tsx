@@ -29,7 +29,7 @@ const PERSONAS: {
     name: "Dietitian",
     role: "Meal Planner",
     quote:
-      "I put Thai Basil Chicken on Wednesday since you rated it a 5 last time. It's 38g protein, 25 minutes, and your partner likes it too.",
+      "I put Thai Basil Chicken on Wednesday since you rated it a 5 last time. It's 38g protein and ready in 25 minutes.",
     label: "Plans your meals",
     description:
       "Thoughtful and strategic. Creates personalized weekly meal plans and explains the reasoning behind every choice.",
