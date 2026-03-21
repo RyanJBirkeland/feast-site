@@ -22,7 +22,7 @@ export function AppPreview() {
             Designed to get out of the way
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base md:text-lg text-v2-text-secondary">
-            Clean, focused, and built for real kitchens — not design awards.
+            Simple enough to use mid-recipe, powerful enough to plan your whole week.
           </p>
         </div>
 
