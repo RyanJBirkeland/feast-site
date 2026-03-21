@@ -18,7 +18,7 @@ const STEPS = [
     number: "03",
     title: "Cook with confidence",
     description:
-      "When it's time to cook, your Chef walks you through each recipe step by step. Ask questions mid-recipe and get real answers — like having a friend in your kitchen who actually knows what they&apos;re doing.",
+      "When it's time to cook, your Chef walks you through each recipe step by step. Ask questions mid-recipe and get real answers — like having a friend in your kitchen who actually knows what they're doing.",
   },
   {
     number: "04",
