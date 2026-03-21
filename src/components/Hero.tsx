@@ -1,11 +1,4 @@
-import {
-  ClipboardDocumentListIcon,
-  SparklesIcon,
-  FireIcon,
-  CalendarDaysIcon,
-  HomeIcon,
-  ShoppingCartIcon,
-} from "@heroicons/react/24/outline";
+import Image from "next/image";
 import { PhoneMockup } from "@/components/PhoneMockup";
 
 export function Hero() {
@@ -58,110 +51,16 @@ export function Hero() {
             }}
           />
           <PhoneMockup size="lg" glow className="!w-[200px] md:!w-[260px]">
-            <HeroPhoneContent />
+            <Image
+              src="/screenshots/chat.png"
+              alt="Feast app — chat with your Dietitian"
+              width={260}
+              height={560}
+              className="w-full h-auto"
+            />
           </PhoneMockup>
         </div>
       </div>
     </section>
-  );
-}
-
-function HeroPhoneContent() {
-  return (
-    <div className="p-4 text-xs" style={{ minHeight: 420 }}>
-      {/* Status bar */}
-      <div className="mb-4 flex items-center justify-between">
-        <span className="text-[10px] text-v2-text-secondary">9:41</span>
-        <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-v2-primary">
-          FEAST
-        </span>
-        <span className="text-[10px] text-v2-text-secondary">100%</span>
-      </div>
-
-      {/* Greeting */}
-      <p className="mb-4 text-[18px] font-bold leading-[1.25] text-v2-text-primary">
-        Good evening!
-        <br />
-        Let&apos;s plan your week.
-      </p>
-
-      {/* Dietitian card */}
-      <div className="mb-3 rounded-[16px] border border-v2-border bg-v2-card p-3">
-        <div className="mb-2 flex items-center gap-2">
-          <div
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-v2-primary"
-          >
-            <ClipboardDocumentListIcon className="h-4 w-4 text-white" />
-          </div>
-          <div>
-            <p className="text-[12px] font-semibold text-v2-text-primary">
-              Your Dietitian
-            </p>
-            <p className="text-[10px] text-v2-text-tertiary">
-              Meal Planning Expert
-            </p>
-          </div>
-        </div>
-        <p className="text-[11px] leading-[1.5] text-v2-text-secondary">
-          I&apos;ve planned 5 meals based on your preferences. High protein, low
-          carb — just how you like it.
-        </p>
-      </div>
-
-      {/* Recipe cards */}
-      <div className="mb-3 flex gap-2">
-        <div className="flex-1 rounded-xl border border-v2-border bg-v2-card p-2.5">
-          <div className="mb-2 flex h-[50px] items-center justify-center rounded-lg" style={{ background: "linear-gradient(135deg, #1a3a2a, #0a2a1a)" }}>
-            <SparklesIcon className="h-4 w-4 text-white/70" />
-          </div>
-          <p className="text-[10px] font-semibold text-v2-text-primary">
-            Thai Salad
-          </p>
-          <p className="text-[9px] text-v2-text-tertiary">25m · 420 cal</p>
-        </div>
-        <div className="flex-1 rounded-xl border border-v2-border bg-v2-card p-2.5">
-          <div className="mb-2 flex h-[50px] items-center justify-center rounded-lg" style={{ background: "linear-gradient(135deg, #2a2a1a, #1a1a0a)" }}>
-            <FireIcon className="h-4 w-4 text-white/70" />
-          </div>
-          <p className="text-[10px] font-semibold text-v2-text-primary">
-            Lemon Chicken
-          </p>
-          <p className="text-[9px] text-v2-text-tertiary">30m · 380 cal</p>
-        </div>
-      </div>
-
-      {/* CTA */}
-      <div
-        className="rounded-[14px] py-2.5 text-center text-[12px] font-bold text-v2-background"
-        style={{ background: "linear-gradient(135deg, #00D37F, #00A863)" }}
-      >
-        View Full Plan
-      </div>
-
-      {/* Tab bar */}
-      <div className="mt-4 flex justify-around border-t border-v2-border pt-3">
-        <div className="text-center">
-          <div className="flex justify-center">
-            <CalendarDaysIcon className="h-4 w-4 text-v2-text-tertiary" />
-          </div>
-          <p className="mt-0.5 text-[9px] text-v2-text-tertiary">Plan</p>
-        </div>
-        <div className="text-center">
-          <div className="flex justify-center">
-            <HomeIcon className="h-4 w-4 text-v2-primary" />
-          </div>
-          <p className="mt-0.5 text-[9px] font-semibold text-v2-primary">
-            Today
-          </p>
-          <div className="mx-auto mt-0.5 h-0.5 w-4 rounded-full bg-v2-primary" />
-        </div>
-        <div className="text-center">
-          <div className="flex justify-center">
-            <ShoppingCartIcon className="h-4 w-4 text-v2-text-tertiary" />
-          </div>
-          <p className="mt-0.5 text-[9px] text-v2-text-tertiary">Shop</p>
-        </div>
-      </div>
-    </div>
   );
 }

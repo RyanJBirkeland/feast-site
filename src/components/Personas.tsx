@@ -65,11 +65,11 @@ export function Personas() {
             Your AI Team
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-[-0.4px] text-v2-text-primary sm:text-4xl">
-            Four experts. One app.
+            Four specialists who actually know you
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-v2-text-secondary">
-            Think of it as having a personal nutritionist, dietitian, chef, and
-            coach in your pocket.
+            A nutritionist, dietitian, chef, and coach — all in your pocket.
+            They remember your goals, your taste, and your schedule.
           </p>
         </div>
 

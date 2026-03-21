@@ -10,13 +10,13 @@ const FEATURES = [
     icon: ChatBubbleLeftRightIcon,
     title: "Conversational, Not Transactional",
     description:
-      "Tell Feast what you're feeling this week. No forms, no checkboxes — just natural conversation. Every interaction should feel like talking to a friend, not filling out a form.",
+      "Tell Feast what you're feeling this week. No forms, no checkboxes — just natural conversation that feels like talking to a friend.",
   },
   {
     icon: SparklesIcon,
     title: "It Remembers You",
     description:
-      "Feast should feel like it knows you. Cutting back on carbs? It remembers next week. Loved that Thai recipe? It'll find more like it. The app gets smarter every day.",
+      "Cutting back on carbs? It remembers next week. Loved that Thai recipe? It'll find more like it. Feast gets smarter the more you use it.",
   },
   {
     icon: HeartIcon,
@@ -41,11 +41,11 @@ export function Features() {
             Why Feast
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-[-0.4px] text-v2-text-primary sm:text-4xl">
-            The intelligent way to plan, shop, and cook
+            Meal planning that actually knows you
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-v2-text-secondary">
-            Every meal planning app treats users the same way: a form to fill
-            out, checkboxes to tick. That&apos;s not how humans work.
+            Every meal planning app treats you the same way: a form to fill
+            out, checkboxes to tick. That&apos;s not how people work.
           </p>
         </div>
 
