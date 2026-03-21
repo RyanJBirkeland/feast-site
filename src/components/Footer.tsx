@@ -35,8 +35,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-white/[0.06] pt-6 text-center text-xs text-v2-text-tertiary">
-          &copy; {new Date().getFullYear()} R.B Technologies LLC. All rights
-          reserved.
+          {new Date().getFullYear()} R.B Technologies LLC
         </div>
       </div>
     </footer>
