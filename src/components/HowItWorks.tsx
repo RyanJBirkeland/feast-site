@@ -1,8 +1,4 @@
 import Image from "next/image";
-import {
-  ClipboardDocumentListIcon,
-  FireIcon,
-} from "@heroicons/react/24/outline";
 import { PhoneMockup } from "@/components/PhoneMockup";
 
 const STEPS = [
@@ -30,6 +26,13 @@ const STEPS = [
     description:
       "Your meal plan becomes a grocery list — deduplicated, organized by category, and ready to send to Instacart for delivery. No more wandering the aisles.",
   },
+];
+
+const STEP_SCREENSHOTS = [
+  { src: "/screenshots/chat.png", alt: "Feast app — conversation with Dietitian" },
+  { src: "/screenshots/planning.png", alt: "Feast app — Dietitian generating meal plan" },
+  { src: "/screenshots/chat.png", alt: "Feast app — cooking guidance from Chef" },
+  { src: "/screenshots/planning.png", alt: "Feast app — grocery list" },
 ];
 
 export function HowItWorks() {
@@ -76,10 +79,13 @@ export function HowItWorks() {
 
                 {/* Mini phone */}
                 <PhoneMockup size="sm">
-                  {i === 0 && <Step1Phone />}
-                  {i === 1 && <Step2Phone />}
-                  {i === 2 && <Step3Phone />}
-                  {i === 3 && <Step4Phone />}
+                  <Image
+                    src={STEP_SCREENSHOTS[i].src}
+                    alt={STEP_SCREENSHOTS[i].alt}
+                    width={160}
+                    height={340}
+                    className="w-full h-auto"
+                  />
                 </PhoneMockup>
               </div>
 
@@ -98,107 +104,5 @@ export function HowItWorks() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Step1Phone() {
-  return (
-    <div className="p-3 text-[7px]">
-      <div className="mb-2 text-center text-[8px] font-bold tracking-[0.2em] uppercase text-v2-primary">
-        FEAST
-      </div>
-      <div className="mb-2 flex items-center gap-1.5">
-        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-v2-primary">
-          <ClipboardDocumentListIcon className="h-3 w-3 text-white" />
-        </div>
-        <span className="text-[8px] font-semibold text-v2-text-primary">Dietitian</span>
-      </div>
-      <div className="mb-1.5 rounded-lg border border-v2-border bg-v2-card p-2">
-        <p className="leading-[1.5] text-v2-text-secondary">What are you feeling this week? Any preferences?</p>
-      </div>
-      <div className="ml-5 rounded-lg p-2" style={{ background: "rgba(0,211,127,0.12)" }}>
-        <p className="leading-[1.5] text-v2-primary">High protein, keep it simple. My partner is vegetarian on Tuesdays.</p>
-      </div>
-    </div>
-  );
-}
-
-function Step2Phone() {
-  return (
-    <div className="p-3 text-[7px]">
-      <div className="mb-2 text-center text-[8px] font-bold tracking-[0.2em] uppercase text-v2-primary">
-        FEAST
-      </div>
-      <p className="mb-1.5 text-v2-text-tertiary">Your Week</p>
-      {[
-        { day: "Mon", meal: "Thai Salad", meta: "420 cal · 35g protein" },
-        { day: "Tue", meal: "Veggie Stir Fry", meta: "380 cal · 🌱 vegetarian" },
-        { day: "Wed", meal: "Lemon Chicken", meta: "510 cal · 42g protein" },
-      ].map((item) => (
-        <div key={item.day} className="mb-1 rounded-md border border-v2-border bg-v2-card p-1.5">
-          <p className="font-semibold text-v2-text-primary">{item.day} — {item.meal}</p>
-          <p className="text-[6px] text-v2-text-tertiary">{item.meta}</p>
-        </div>
-      ))}
-      <div className="mt-2 rounded-md py-1.5 text-center font-bold text-v2-background" style={{ background: "linear-gradient(135deg, #00D37F, #00A863)" }}>
-        View Full Plan
-      </div>
-    </div>
-  );
-}
-
-function Step3Phone() {
-  return (
-    <div className="p-3 text-[7px]">
-      <div className="mb-2 text-center text-[8px] font-bold tracking-[0.2em] uppercase text-v2-primary">
-        FEAST
-      </div>
-      <div className="mb-2 flex items-center gap-1.5">
-        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-v2-primary">
-          <FireIcon className="h-3 w-3 text-white" />
-        </div>
-        <span className="text-[8px] font-semibold text-v2-text-primary">Chef</span>
-      </div>
-      <p className="mb-1 font-semibold text-v2-text-primary">Step 3 of 6</p>
-      <div className="mb-1.5 rounded-md border border-v2-border bg-v2-card p-1.5">
-        <p className="leading-[1.4] text-v2-text-secondary">Sear the chicken for 4 minutes per side until golden. Don&apos;t move it — let the crust form.</p>
-      </div>
-      <div className="mb-2 h-[3px] rounded-full bg-v2-border">
-        <div className="h-full w-1/2 rounded-full bg-v2-primary" />
-      </div>
-      <div className="flex gap-1">
-        <div className="flex-1 rounded-md border border-v2-border bg-v2-card py-1 text-center text-[6px] text-v2-text-secondary">← Prev</div>
-        <div className="flex-1 rounded-md py-1 text-center text-[6px] font-bold text-v2-background" style={{ background: "linear-gradient(135deg, #00D37F, #00A863)" }}>Next →</div>
-      </div>
-    </div>
-  );
-}
-
-function Step4Phone() {
-  return (
-    <div className="p-3 text-[7px]">
-      <div className="mb-2 text-center text-[8px] font-bold tracking-[0.2em] uppercase text-v2-primary">
-        FEAST
-      </div>
-      <p className="mb-1 font-semibold text-v2-text-primary">Grocery List</p>
-      <p className="mb-2 text-[6px] text-v2-text-tertiary">12 items · 3 categories</p>
-      {[
-        { cat: "Produce", items: "Asparagus, Peas, Lemon, Ginger" },
-        { cat: "Protein", items: "Chicken breast, Tofu" },
-        { cat: "Pantry", items: "Soy sauce, Rice, Coconut milk" },
-      ].map((group) => (
-        <div key={group.cat} className="mb-1.5">
-          <p className="mb-0.5 text-[6px] font-semibold uppercase tracking-[0.5px] text-v2-primary">{group.cat}</p>
-          <div className="rounded-md border border-v2-border bg-v2-card p-1.5">
-            <p className="text-v2-text-secondary">{group.items}</p>
-          </div>
-        </div>
-      ))}
-      <div className="mt-2 flex items-center justify-center gap-1.5 rounded-md py-1.5" style={{ background: "linear-gradient(135deg, #00D37F, #00A863)" }}>
-        {/* brightness-0 turns the AllWhite SVG to black so it's visible on the green gradient button */}
-        <Image src="/instacart-logo.svg" alt="Instacart" width={48} height={12} className="brightness-0" />
-        <span className="text-[7px] font-bold text-v2-background">Send to Instacart</span>
-      </div>
-    </div>
   );
 }
