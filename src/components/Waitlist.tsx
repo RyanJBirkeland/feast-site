@@ -42,7 +42,7 @@ export function Waitlist() {
           </h2>
           <p className="mt-4 text-lg text-v2-text-secondary">
             We&apos;ll reach out when your spot opens up. In the meantime,
-            your future Dietitian is already looking forward to meeting you.
+            your future team is already looking forward to meeting you.
           </p>
         </div>
       </section>
