@@ -22,7 +22,7 @@ const PERSONAS: {
       "You've been consistently low on fiber — averaging 18g vs. your 25g target. Adding more legumes to next week's plan would help.",
     label: "Understands your health",
     description:
-      "Clinical but warm. Manages your health profile, dietary needs, and nutritional targets with evidence-based guidance.",
+      "Precise but warm. Manages your health profile, dietary needs, and nutritional targets with evidence-based guidance.",
   },
   {
     Icon: ClipboardDocumentListIcon,

@@ -8,7 +8,10 @@ export function Hero() {
         {/* Left: Copy */}
         <div className="flex-1 text-center md:text-left">
           <p className="text-[11px] font-semibold uppercase tracking-[2px] text-v2-primary">
-            AI-Powered Meal Planning for the Modern Kitchen
+            AI-Powered Meal Planning
+          </p>
+          <p className="mt-4 text-2xl font-bold tracking-[0.3em] uppercase text-v2-text-primary sm:text-3xl">
+            FEAST
           </p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.12] tracking-[-0.5px] text-v2-text-primary sm:text-5xl md:text-[56px]">
             Plan smarter. Shop easier.
@@ -18,7 +21,7 @@ export function Hero() {
           <p className="mx-auto mt-5 max-w-full md:max-w-[420px] text-[17px] leading-[1.7] text-v2-text-secondary md:mx-0">
             Feast covers your entire food journey.{" "}
             <span className="font-semibold text-v2-text-primary">
-              Planning, cooking, and shopping
+              Planning, shopping, and cooking
             </span>
             , all in one app. Tell it what you&apos;re craving,
             what you&apos;re working toward, or what&apos;s in your fridge

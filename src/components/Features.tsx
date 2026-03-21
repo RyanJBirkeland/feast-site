@@ -8,7 +8,7 @@ import {
 const FEATURES = [
   {
     icon: ChatBubbleLeftRightIcon,
-    title: "Conversational, Not Transactional",
+    title: "Just Say What You Want",
     description:
       "Tell Feast what you're feeling this week. No forms, no checkboxes — just natural conversation that feels like talking to a friend.",
   },
@@ -28,7 +28,7 @@ const FEATURES = [
     icon: ShoppingCartIcon,
     title: "Groceries, Handled",
     description:
-      "Your recipes synthesize into a single grocery list, organized by category. Shop it yourself, or send it out for pickup or delivery.",
+      "Your recipes turn into a single grocery list, organized by category. Shop it yourself, or send it out for pickup or delivery.",
   },
 ];
 
@@ -41,7 +41,7 @@ export function Features() {
             Why Feast
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-[-0.4px] text-v2-text-primary sm:text-4xl">
-            Meal planning that actually knows you
+            Meal planning that knows you
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-v2-text-secondary">
             Every meal planning app treats you the same way: a form to fill

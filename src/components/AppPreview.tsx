@@ -19,10 +19,10 @@ export function AppPreview() {
             See It In Action
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-[-0.4px] text-v2-text-primary sm:text-4xl">
-            Designed to get out of the way
+            Simple enough for mid-recipe. Powerful enough for your whole week.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base md:text-lg text-v2-text-secondary">
-            Simple enough to use mid-recipe, powerful enough to plan your whole week.
+            Designed to get out of the way so you can focus on the food.
           </p>
         </div>
 

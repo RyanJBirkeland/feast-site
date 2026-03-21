@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "The Team", href: "#team" },
+  { label: "Your Team", href: "#team" },
 ];
 
 export function Header() {

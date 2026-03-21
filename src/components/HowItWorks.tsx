@@ -18,13 +18,13 @@ const STEPS = [
     number: "03",
     title: "Cook with confidence",
     description:
-      "When it's time to cook, your Chef walks you through each recipe step by step. Ask questions mid-recipe and get real answers — like having a pro in your kitchen.",
+      "When it's time to cook, your Chef walks you through each recipe step by step. Ask questions mid-recipe and get real answers — like having a friend in your kitchen who actually knows what they&apos;re doing.",
   },
   {
     number: "04",
     title: "Shop in one tap",
     description:
-      "Your recipes synthesize into a single grocery list, organized by category. Shop it yourself or send it out for pickup or delivery.",
+      "Your recipes turn into a single grocery list, organized by category. Shop it yourself or send it out for pickup or delivery.",
   },
 ];
 
@@ -47,7 +47,7 @@ export function HowItWorks() {
             Four steps. No learning curve.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-v2-text-secondary">
-            Describe what you&apos;re feeling, and Feast handles the rest.
+            Tell Feast what you&apos;re in the mood for. It handles the rest.
           </p>
         </div>
 
