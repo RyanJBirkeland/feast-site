@@ -37,32 +37,36 @@ Create a single script (`scripts/seed-demo.ts`) that populates a demo user accou
 
 ### 3.1 Recipes (10-15 curated)
 
-Select recipes from the existing seeded recipes table (`user_id IS NULL`) that:
+Select recipes from the existing seeded recipes table (`user_id IS NULL AND external_id IS NOT NULL`) that:
 - Have appealing `image_url` values (not broken links)
 - Cover a mix of meal types (breakfast, lunch, dinner, snack)
 - Cover varied cuisines (Mediterranean, Asian, American, Italian)
 - Have complete nutrition data (calories, protein, carbs, fat)
 - Have reasonable prep/cook times (15-45 min for weekdays, up to 60 for weekends)
 
-The script should query existing seeded recipes matching these criteria and save their IDs for use in the meal plan. No new recipes need to be inserted — use the 3000+ already in the database.
+The script should query existing seeded recipes matching these criteria and save their IDs for use in the meal plan. No new recipes need to be inserted — use the existing recipes in the database. Filter with `external_id IS NOT NULL` to get Spoonacular-sourced recipes (which have validated data).
 
 If good seeded recipes aren't available (broken images, missing data), the script should insert a small set of hand-curated demo recipes with known-good image URLs.
 
 ### 3.2 Meal Plan (7 days, active)
 
-- `start_date`: Current Monday (or next Monday if today is mid-week)
+- `week_start_date`: Current Monday (or next Monday if today is mid-week) — required legacy field, set to same value as `start_date`
+- `start_date`: Same Monday value
 - `duration_days`: 7
 - `title`: `"This Week's Plan"`
 - `status`: `active`
 - 3 meals per day (breakfast, lunch, dinner) = 21 meal plan items
+- Use `day_index` (0-6) for slot assignment, not the legacy `day_of_week` column
 - Assign curated recipes to each slot
-- Weekend meals should use longer-cook-time recipes
-- Weekday meals should be 30 min or under
+- Weekend meals (day_index 5-6) should use longer-cook-time recipes
+- Weekday meals (day_index 0-4) should be 30 min or under
 
 ### 3.3 Grocery List (generated from meal plan)
 
 - `title`: `"This Week's Groceries"`
 - `status`: `active`
+- `meal_plan_id`: Reference the created meal plan
+- `items`: `{}` (legacy JSONB field — set to empty object, real data goes in `grocery_list_items`)
 - Populate `grocery_list_items` from the meal plan's recipe ingredients
 - Deduplicate ingredients that appear in multiple recipes
 - Categorize by: produce, dairy, meat, pantry, spices
@@ -70,10 +74,12 @@ If good seeded recipes aren't available (broken images, missing data), the scrip
 
 ### 3.4 Conversations (2 chats)
 
+**Note:** The `messages` table only has `role` ('user'|'assistant') — there is no `persona` column. Persona is implied by conversation title only. Do not try to set a persona field.
+
 **Conversation 1: Dietitian onboarding chat**
 - Title: `"Weekly Planning"`
 - 6-8 messages showing natural back-and-forth
-- User asks for meal plan, Dietitian responds warmly
+- User asks for meal plan, assistant responds warmly (role='assistant' for Dietitian messages)
 - Example exchange:
   - User: "I'm tired of chicken breast, surprise me"
   - Dietitian: "I've got you. How about a Thai Basil Stir Fry on Wednesday? It's 38g protein and ready in 25 minutes."
@@ -117,8 +123,8 @@ If good seeded recipes aren't available (broken images, missing data), the scrip
 - Runs via `npx tsx scripts/seed-demo.ts`
 
 **Idempotency:**
-1. Check if `demo@feast-meals.com` user exists in auth.users
-2. If exists: delete all their data (meal plans, grocery lists, conversations, events, favorites, taste profile, preferences) then delete the auth user
+1. Check if `demo@feast-meals.com` user exists in auth.users (via `auth.admin.listUsers()`)
+2. If exists: call `auth.admin.deleteUser(userId)` — this cascades to `public.users` and all related data via foreign key ON DELETE CASCADE. No need to manually delete from individual tables.
 3. Re-create everything from scratch
 
 **Script flow:**

@@ -2,40 +2,36 @@
 
 ## App Screenshots for Landing Page
 
-The phone mockups on the landing page are currently hand-coded CSS approximations. Replace them with real app screenshots for authenticity.
+Phone mockups are currently using placeholder screenshots (`public/screenshots/chat.png` and `planning.png`). Replace them with final screenshots from the demo account.
+
+### Prerequisites
+
+1. Demo account is seeded: `demo@feast-meals.com` / `Test123`
+2. Re-seed if needed: `cd feast && npx tsx scripts/seed-demo.ts`
+3. Source your own food photography for the demo recipes
 
 ### Screenshots Needed
 
-Capture these screens from the Feast app (iOS Simulator `Cmd+S`, TestFlight, or Expo Go):
+Capture from iPhone 16 simulator logged in as the demo account:
 
-| # | Screen | Used In | Notes |
-|---|--------|---------|-------|
-| 1 | Home screen (Coach greeting + today's meals) | Hero section (large phone) | Most prominent — make it look great |
-| 2 | "Today" view | AppPreview (left phone) | |
-| 3 | Meal Plan calendar with Dietitian intro | AppPreview (center phone) | |
-| 4 | Recipe detail or browse | AppPreview (right phone) | |
-| 5 | Onboarding conversation with Nutritionist | HowItWorks step 1 | |
-| 6 | Weekly meal plan view | HowItWorks step 2 | |
-| 7 | Cooking mode with Chef | HowItWorks step 3 | |
-| 8 | Grocery list | HowItWorks step 4 | |
+| # | Filename | Screen | Used In |
+|---|----------|--------|---------|
+| 1 | `hero-home.png` | Home/Today view with greeting + meal cards | Hero section (large phone) |
+| 2 | `hiw-conversation.png` | Chat with Dietitian | HowItWorks step 1 |
+| 3 | `hiw-mealplan.png` | Weekly meal plan view | HowItWorks step 2 |
+| 4 | `hiw-cooking.png` | Recipe detail / cooking mode | HowItWorks step 3 |
+| 5 | `hiw-grocery.png` | Grocery list view | HowItWorks step 4 |
+| 6 | `preview-today.png` | Today tab | AppPreview left phone |
+| 7 | `preview-plan.png` | Plan tab | AppPreview center phone |
+| 8 | `preview-recipes.png` | Recipe browse | AppPreview right phone |
 
 ### Where to Save
 
-Drop screenshots into `public/screenshots/` with clear names like:
-- `home.png`
-- `today.png`
-- `meal-plan.png`
-- `recipe.png`
-- `onboarding-chat.png`
-- `weekly-plan.png`
-- `cooking-mode.png`
-- `grocery-list.png`
+Drop into `public/screenshots/` — the `<Image>` tags are already wired up in:
+- `src/components/Hero.tsx` — uses `chat.png` (swap to `hero-home.png`)
+- `src/components/HowItWorks.tsx` — uses `STEP_SCREENSHOTS` array (update src paths)
+- `src/components/AppPreview.tsx` — uses `chat.png` and `planning.png` (update src paths)
 
 ### After Capturing
 
-Run Claude Code to swap the hand-coded JSX content in these components for `<Image>` tags:
-- `src/components/Hero.tsx`
-- `src/components/AppPreview.tsx`
-- `src/components/HowItWorks.tsx`
-
-The PhoneMockup frames stay as-is — only the inner content changes.
+Update the image `src` paths in each component to point to the new filenames. The `PhoneMockup` frames and layout stay as-is — only the `src` prop changes.

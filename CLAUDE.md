@@ -12,10 +12,11 @@ This is the **Feast landing page** — the public-facing marketing site for the 
 
 - **Domain:** feast-meals.com (Cloudflare DNS → Vercel)
 - **Hosting:** Vercel (auto-deploys from `main`)
-- **Company:** R.B Technologies LLC
+- **Company:** R.B Technologies (sole proprietorship, WA)
 - **Feast app repo:** `/Users/RBTECHBOT/Documents/Repositories/feast` (React Native/Expo)
 - **No code sharing:** Feast app uses Tamagui (React Native), incompatible with Next.js web components. Use screenshots for realistic phone mockups, not ported code.
-- **Feature flags:** `NEXT_PUBLIC_SHOW_INFO_LINKS=true` shows Contact/Privacy/Terms in footer (hidden until pages exist)
+- **Feature flags:** `NEXT_PUBLIC_SHOW_INFO_LINKS=true` shows Contact/Privacy/Terms in footer (currently enabled)
+- **Pages:** `/privacy` and `/terms` exist with legal content
 
 ## Design System
 
@@ -85,6 +86,14 @@ The `playwright@claude-plugins-official` plugin is enabled globally in `~/.claud
 - `vercel --prod` to manually trigger production deploy (needed after adding env vars)
 - Env vars set via `vercel env add <NAME> production`
 - PR merges to main create Preview deploys, not Production — if env vars are production-only, use `vercel --prod`
+
+## Demo Account & Screenshots
+
+- **Demo account:** `demo@feast-meals.com` / `Test123` — fully populated with curated data
+- **Seed script:** `feast/scripts/seed-demo.ts` — run via `npx tsx scripts/seed-demo.ts` in the Feast repo. Idempotent.
+- **Placeholder screenshots:** `public/screenshots/chat.png` and `planning.png` — currently used in Hero, HowItWorks, and AppPreview phone mockups
+- **Final screenshots needed:** 8 screens captured from simulator using the demo account, saved to `public/screenshots/` replacing placeholders
+- Phone mockups use `<Image>` tags inside `PhoneMockup` components — just swap the `src` paths when final screenshots are ready
 
 ## Component Gotchas
 
