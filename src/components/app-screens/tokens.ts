@@ -30,7 +30,7 @@ export const appColors = {
 
 export const appFont = {
   sans: "'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
-  mono: "'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace",
+  mono: "var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace",
 } as const;
 
 // The four AI personas, with the avatar gradient + accent tone the app uses to

@@ -1,5 +1,11 @@
-import Image from "next/image";
 import { PhoneMockup } from "@/components/PhoneMockup";
+import {
+  ChatScreen,
+  CookScreen,
+  GroceryScreen,
+  PlanScreen,
+  ScaledScreen,
+} from "@/components/app-screens";
 
 const STEPS = [
   {
@@ -7,32 +13,29 @@ const STEPS = [
     title: "Have a conversation",
     description:
       'Open Feast and tell your Dietitian what you\'re in the mood for. "I\'m tired of chicken breast, surprise me" or "We\'re doing date night Friday, make it fancy" — just talk naturally.',
+    Screen: ChatScreen,
   },
   {
     number: "02",
     title: "Get a plan that fits",
     description:
       "Your Dietitian builds a personalized meal plan based on your conversation, your history, and your nutritional goals. Don't like something? Swap it with a tap.",
+    Screen: PlanScreen,
   },
   {
     number: "03",
     title: "Cook with confidence",
     description:
       "When it's time to cook, your Chef walks you through each recipe step by step. Ask questions mid-recipe and get real answers — like having a friend in your kitchen who actually knows what they're doing.",
+    Screen: CookScreen,
   },
   {
     number: "04",
     title: "Shop in one tap",
     description:
       "Your recipes turn into a single grocery list, organized by category. Shop it yourself or send it out for pickup or delivery.",
+    Screen: GroceryScreen,
   },
-];
-
-const STEP_SCREENSHOTS = [
-  { src: "/screenshots/chat.png", alt: "Feast app — conversation with Dietitian" },
-  { src: "/screenshots/planning.png", alt: "Feast app — Dietitian generating meal plan" },
-  { src: "/screenshots/chat.png", alt: "Feast app — cooking guidance from Chef" },
-  { src: "/screenshots/planning.png", alt: "Feast app — grocery list" },
 ];
 
 export function HowItWorks() {
@@ -79,13 +82,9 @@ export function HowItWorks() {
 
                 {/* Mini phone */}
                 <PhoneMockup size="sm">
-                  <Image
-                    src={STEP_SCREENSHOTS[i].src}
-                    alt={STEP_SCREENSHOTS[i].alt}
-                    width={160}
-                    height={340}
-                    className="w-full h-auto"
-                  />
+                  <ScaledScreen>
+                    <step.Screen />
+                  </ScaledScreen>
                 </PhoneMockup>
               </div>
 

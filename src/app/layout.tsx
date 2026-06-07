@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+});
+
+// Powers the app-screen mockups' uppercase mono labels (timestamps, tags),
+// matching the Feast app's monospace type. Exposed as a CSS variable.
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className} style={{ colorScheme: "dark" }}>
+    <html
+      lang="en"
+      className={`${inter.className} ${jetbrainsMono.variable}`}
+      style={{ colorScheme: "dark" }}
+    >
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>

@@ -1,5 +1,10 @@
-import Image from "next/image";
 import { PhoneMockup } from "@/components/PhoneMockup";
+import {
+  PlanScreen,
+  RecipesScreen,
+  ScaledScreen,
+  TodayScreen,
+} from "@/components/app-screens";
 
 export function AppPreview() {
   return (
@@ -31,13 +36,9 @@ export function AppPreview() {
           {/* Left phone: Today */}
           <div className="-rotate-3">
             <PhoneMockup size="md">
-              <Image
-                src="/screenshots/chat.png"
-                alt="Feast app — Today view"
-                width={180}
-                height={390}
-                className="w-full h-auto"
-              />
+              <ScaledScreen>
+                <TodayScreen />
+              </ScaledScreen>
             </PhoneMockup>
             <p className="mt-2.5 text-center text-[11px] text-v2-text-tertiary">
               Today
@@ -47,13 +48,9 @@ export function AppPreview() {
           {/* Center phone: Plan (elevated) */}
           <div className="-translate-y-2.5">
             <PhoneMockup size="md" glow className="!w-[200px]">
-              <Image
-                src="/screenshots/planning.png"
-                alt="Feast app — Plan view"
-                width={180}
-                height={390}
-                className="w-full h-auto"
-              />
+              <ScaledScreen>
+                <PlanScreen />
+              </ScaledScreen>
             </PhoneMockup>
             <p className="mt-2.5 text-center text-[11px] text-v2-text-tertiary">
               Plan
@@ -63,13 +60,9 @@ export function AppPreview() {
           {/* Right phone: Recipes */}
           <div className="rotate-3">
             <PhoneMockup size="md">
-              <Image
-                src="/screenshots/chat.png"
-                alt="Feast app — Recipes view"
-                width={180}
-                height={390}
-                className="w-full h-auto"
-              />
+              <ScaledScreen>
+                <RecipesScreen />
+              </ScaledScreen>
             </PhoneMockup>
             <p className="mt-2.5 text-center text-[11px] text-v2-text-tertiary">
               Recipes
@@ -80,13 +73,9 @@ export function AppPreview() {
         {/* Mobile: single centered phone */}
         <div className="mt-16 flex justify-center md:hidden">
           <PhoneMockup size="md" glow className="!w-[200px] sm:!w-[220px]">
-            <Image
-              src="/screenshots/planning.png"
-              alt="Feast app — Plan view"
-              width={180}
-              height={390}
-              className="w-full h-auto"
-            />
+            <ScaledScreen>
+              <PlanScreen />
+            </ScaledScreen>
           </PhoneMockup>
         </div>
       </div>

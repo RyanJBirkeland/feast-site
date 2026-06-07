@@ -14,7 +14,7 @@ This is the **Feast landing page** — the public-facing marketing site for the 
 - **Hosting:** Vercel (auto-deploys from `main`)
 - **Company:** R.B Technologies LLC (Washington State, formed Feb 10 2026)
 - **Feast app repo:** `/Users/RBTECHBOT/Documents/Repositories/feast` (React Native/Expo)
-- **No code sharing:** Feast app uses Tamagui (React Native), incompatible with Next.js web components. Use screenshots for realistic phone mockups, not ported code.
+- **No code sharing:** Feast app uses Tamagui (React Native), incompatible with Next.js web components. Phone mockups are hand-built JSX "app screens" (`src/components/app-screens/`) that mirror the app's real design system — not ported app code, and not screenshots.
 - **Feature flags:** `NEXT_PUBLIC_SHOW_INFO_LINKS=true` shows Contact/Privacy/Terms in footer (currently enabled)
 - **Pages:** `/privacy` and `/terms` exist with legal content
 
@@ -87,13 +87,27 @@ The `playwright@claude-plugins-official` plugin is enabled globally in `~/.claud
 - Env vars set via `vercel env add <NAME> production`
 - PR merges to main create Preview deploys, not Production — if env vars are production-only, use `vercel --prod`
 
-## Demo Account & Screenshots
+## App-Screen Mockups (phone content)
 
-- **Demo account:** `demo@feast-meals.com` / `Test123` — fully populated with curated data
-- **Seed script:** `feast/scripts/seed-demo.ts` — run via `npx tsx scripts/seed-demo.ts` in the Feast repo. Idempotent.
-- **Placeholder screenshots:** `public/screenshots/chat.png` and `planning.png` — currently used in Hero, HowItWorks, and AppPreview phone mockups
-- **Final screenshots needed:** 8 screens captured from simulator using the demo account, saved to `public/screenshots/` replacing placeholders
-- Phone mockups use `<Image>` tags inside `PhoneMockup` components — just swap the `src` paths when final screenshots are ready
+Phone mockups render live JSX "app screens" that mirror the Feast app's real
+design system, instead of screenshots. See
+`docs/superpowers/specs/2026-06-07-jsx-app-screen-mockups-design.md`.
+
+- **Location:** `src/components/app-screens/` — one component per screen
+  (`ChatScreen`, `TodayScreen`, `PlanScreen`, `RecipesScreen`, `CookScreen`,
+  `GroceryScreen`), plus `ScaledScreen`, `tokens.ts`, and primitives
+  (`Avatar`, `Icon`, `StatusBar`, `TabBar`, `Imgph`).
+- **Design source of truth:** `mobile-design-system/themes/feast` (colors,
+  personas) and its `spec/screens/*.js` mockups. The app's palette
+  (`bg #0A0A0B` / `accent #3DDC97`) differs from the site's brand tokens and is
+  scoped in `app-screens/tokens.ts` — keep them separate.
+- **Scaling:** every screen is authored on a fixed 360×780 canvas;
+  `ScaledScreen` measures its frame and scales the canvas to fit (160–260px),
+  so screens stay pixel-proportional to the app at any phone size.
+- **Usage:** `<PhoneMockup><ScaledScreen><ChatScreen /></ScaledScreen></PhoneMockup>`.
+- **Demo account:** `demo@feast-meals.com` / `Test123` — populated curated data.
+- **Seed script:** `feast/scripts/seed-demo.ts` — `npx tsx scripts/seed-demo.ts`
+  in the Feast repo. Idempotent.
 
 ## Component Gotchas
 
