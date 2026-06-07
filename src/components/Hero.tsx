@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { PhoneMockup } from "@/components/PhoneMockup";
+import { ChatScreen, ScaledScreen } from "@/components/app-screens";
 
 export function Hero() {
   return (
@@ -55,13 +55,9 @@ export function Hero() {
             }}
           />
           <PhoneMockup size="lg" glow className="!w-[200px] md:!w-[260px]">
-            <Image
-              src="/screenshots/chat.png"
-              alt="Feast app — chat with your Dietitian"
-              width={260}
-              height={560}
-              className="w-full h-auto"
-            />
+            <ScaledScreen>
+              <ChatScreen />
+            </ScaledScreen>
           </PhoneMockup>
         </div>
       </div>
