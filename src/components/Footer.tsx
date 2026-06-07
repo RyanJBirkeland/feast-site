@@ -10,7 +10,7 @@ export function Footer() {
               FEAST
             </p>
             <p className="mt-1 text-sm text-v2-text-tertiary">
-              Meal planning that finally makes sense.
+              Transform your relationship with food.
             </p>
           </div>
 
@@ -39,7 +39,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-white/[0.06] pt-6 text-center text-xs text-v2-text-tertiary">
-          {new Date().getFullYear()} R.B Technologies
+          {new Date().getFullYear()} R.B Technologies LLC
         </div>
       </div>
     </footer>

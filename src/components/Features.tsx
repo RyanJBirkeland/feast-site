@@ -8,7 +8,7 @@ import {
 const FEATURES = [
   {
     icon: ChatBubbleLeftRightIcon,
-    title: "Conversational, Not Transactional",
+    title: "A Conversation, Not a Form",
     description:
       "Tell Feast what you're feeling this week. No forms, no checkboxes — just a natural conversation with an AI dietitian who listens.",
   },
@@ -28,7 +28,7 @@ const FEATURES = [
     icon: ShoppingCartIcon,
     title: "Groceries, Handled",
     description:
-      "One tap turns your meal plan into a grocery list. Deduplicated, organized, and ready to send to Instacart for delivery.",
+      "One tap turns your meal plan into a grocery list. Deduplicated, organized by category, and ready for pickup or delivery.",
   },
 ];
 

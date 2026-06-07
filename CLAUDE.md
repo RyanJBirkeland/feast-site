@@ -12,7 +12,7 @@ This is the **Feast landing page** — the public-facing marketing site for the 
 
 - **Domain:** feast-meals.com (Cloudflare DNS → Vercel)
 - **Hosting:** Vercel (auto-deploys from `main`)
-- **Company:** R.B Technologies (sole proprietorship, WA)
+- **Company:** R.B Technologies LLC (Washington State, formed Feb 10 2026)
 - **Feast app repo:** `/Users/RBTECHBOT/Documents/Repositories/feast` (React Native/Expo)
 - **No code sharing:** Feast app uses Tamagui (React Native), incompatible with Next.js web components. Use screenshots for realistic phone mockups, not ported code.
 - **Feature flags:** `NEXT_PUBLIC_SHOW_INFO_LINKS=true` shows Contact/Privacy/Terms in footer (currently enabled)

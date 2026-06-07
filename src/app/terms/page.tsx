@@ -66,7 +66,7 @@ export default function TermsOfService() {
 
           <h2 className={SECTION_HEADING}>Intellectual Property</h2>
           <p className={BODY}>
-            Feast, including its design, features, and content, is owned by R.B Technologies.
+            Feast, including its design, features, and content, is owned by R.B Technologies LLC.
             You may use the service for personal, non-commercial purposes. You may not copy,
             modify, or distribute any part of Feast without our written permission.
           </p>
@@ -80,7 +80,7 @@ export default function TermsOfService() {
 
           <h2 className={SECTION_HEADING}>Limitation of Liability</h2>
           <p className={BODY}>
-            To the maximum extent permitted by law, R.B Technologies is not liable for any
+            To the maximum extent permitted by law, R.B Technologies LLC is not liable for any
             indirect, incidental, special, or consequential damages arising from your use of
             Feast. Our total liability is limited to the amount you&apos;ve paid us in the
             12 months before the claim arose (which, during beta, is zero).

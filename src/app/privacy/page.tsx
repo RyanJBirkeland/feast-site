@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
 
           <h2 className={SECTION_HEADING}>Introduction</h2>
           <p className={BODY}>
-            R.B Technologies (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;Feast&rdquo;) operates
+            R.B Technologies LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;Feast&rdquo;) operates
             the Feast mobile application and the feast-meals.com website. This Privacy Policy
             explains how we collect, use, and protect your information when you use our services.
           </p>

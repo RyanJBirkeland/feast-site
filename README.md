@@ -45,11 +45,10 @@ src/
 ├── app/
 │   ├── globals.css           # Tailwind v4 @theme tokens, base styles
 │   ├── layout.tsx            # Inter font, metadata, dark color scheme
-│   ├── page.tsx              # Page with NEXT_PUBLIC_SITE_LIVE feature flag
+│   ├── page.tsx              # Landing page composition (Header → … → Footer)
 │   └── api/waitlist/
 │       └── route.ts          # POST endpoint → Supabase waitlist table
 └── components/
-    ├── ComingSoon.tsx         # Pre-launch holding screen
     ├── Header.tsx             # Dark glassmorphism nav with FEAST wordmark
     ├── Hero.tsx               # Split layout: copy left, phone mockup right
     ├── PhoneMockup.tsx        # Reusable phone frame (sm/md/lg sizes)
@@ -70,17 +69,10 @@ npm run build        # Production build
 npm run lint         # ESLint
 ```
 
-To see the full landing page locally (instead of the coming soon screen):
-
-```bash
-NEXT_PUBLIC_SITE_LIVE=true npm run dev
-```
-
 ## Deployment
 
 - **Hosting:** Vercel (auto-deploys from `main` branch)
 - **Domain:** feast-meals.com (Cloudflare DNS → Vercel)
-- **Feature flag:** `NEXT_PUBLIC_SITE_LIVE` — set to `true` in Vercel env vars to show the full site. When unset, shows the "Coming Soon" screen.
 
 ### Environment Variables
 
@@ -88,7 +80,7 @@ NEXT_PUBLIC_SITE_LIVE=true npm run dev
 |----------|----------|-------------|
 | `NEXT_PUBLIC_SUPABASE_URL` | For waitlist | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | For waitlist | Supabase anon/public key |
-| `NEXT_PUBLIC_SITE_LIVE` | No | Set to `true` to show full site |
+| `NEXT_PUBLIC_SHOW_INFO_LINKS` | No | Set to `true` to show Contact/Privacy/Terms links in the footer |
 
 ## Brand Guidelines
 
