@@ -45,3 +45,6 @@ next-env.d.ts
 
 # superpowers
 .superpowers/
+
+# Claude Code worktrees (added by worktree-nudge hook)
+.worktrees/
