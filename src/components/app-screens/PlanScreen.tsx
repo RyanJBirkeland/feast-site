@@ -51,8 +51,30 @@ export function PlanScreen() {
           <DayCard key={planned.day} planned={planned} />
         ))}
       </div>
+      <ScrollFade />
       <TabBar active="plan" />
     </div>
+  );
+}
+
+// The week is longer than one screen, so it scrolls under the floating tab bar
+// in the real app. This fade dissolves the last day into the background as it
+// nears the bar — reading as "more below" instead of a card colliding with it.
+function ScrollFade() {
+  return (
+    <div
+      aria-hidden
+      style={{
+        position: "absolute",
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: 140,
+        background: `linear-gradient(to bottom, transparent, ${appColors.bg})`,
+        pointerEvents: "none",
+        zIndex: 20,
+      }}
+    />
   );
 }
 
