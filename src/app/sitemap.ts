@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
  * is added so Google and friends can discover it.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/privacy", "/terms"];
+  const routes = ["", "/privacy", "/terms", "/support"];
 
   return routes.map((route) => ({
     url: `${site.url}${route}`,

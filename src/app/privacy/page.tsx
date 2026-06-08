@@ -102,8 +102,8 @@ export default function PrivacyPolicy() {
           </ul>
           <p className={BODY}>
             To exercise any of these rights, email us at{" "}
-            <a href="mailto:ryan@rbtechnologies.dev" className={LINK}>
-              ryan@rbtechnologies.dev
+            <a href="mailto:support@feast-meals.com" className={LINK}>
+              support@feast-meals.com
             </a>
             .
           </p>
@@ -132,8 +132,8 @@ export default function PrivacyPolicy() {
           <h2 className={SECTION_HEADING}>Contact Us</h2>
           <p className={BODY}>
             Questions about this policy? Reach out at{" "}
-            <a href="mailto:ryan@rbtechnologies.dev" className={LINK}>
-              ryan@rbtechnologies.dev
+            <a href="mailto:support@feast-meals.com" className={LINK}>
+              support@feast-meals.com
             </a>
             .
           </p>
