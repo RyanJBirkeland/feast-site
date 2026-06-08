@@ -17,10 +17,10 @@ export function Footer() {
           {SHOW_INFO_LINKS && (
             <div className="flex gap-6 text-sm text-v2-text-tertiary">
               <a
-                href="mailto:ryan@rbtechnologies.dev"
+                href="/support"
                 className="transition-colors duration-200 hover:text-v2-primary"
               >
-                Contact
+                Support
               </a>
               <a
                 href="/privacy"
