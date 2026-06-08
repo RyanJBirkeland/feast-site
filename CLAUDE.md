@@ -67,9 +67,10 @@ The `playwright@claude-plugins-official` plugin is enabled globally in `~/.claud
 
 - **Supabase project:** Feast (iorjhnpjpqimklrpwimf.supabase.co)
 - **Table:** `waitlist` (email, source, created_at) with RLS — anon can insert, not read
-- **API route:** `src/app/api/waitlist/route.ts` — POSTs to Supabase REST API
+- **API route:** `src/app/api/waitlist/route.ts` — POSTs to Supabase REST API. Returns 200 only after a successful insert; 400 (missing email), 503 (env not configured), 500 (insert failed).
 - **Vercel env vars:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` (production only)
-- **Fallback:** On API failure, Waitlist component opens mailto: link so signup isn't lost
+- **Success UI:** the "You're in." screen renders only on a 200, so seeing it means the row persisted.
+- **Fallback:** the mailto: fallback fires only on a *network* exception (fetch throws). Known gap: HTTP error responses (500/503) are not surfaced — the form silently resets, so a misconfigured env or failed insert shows no error and no mailto.
 
 ## SEO, Metadata & Analytics
 
