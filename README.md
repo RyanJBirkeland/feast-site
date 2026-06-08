@@ -17,9 +17,10 @@ The app is currently in private beta on TestFlight. This landing page serves as 
 
 - **Next.js 16** (App Router) + **React 19** + **TypeScript**
 - **Tailwind CSS v4** (via PostCSS, `@theme` directive for design tokens)
-- **Inter** font (Google Fonts via `next/font`)
+- **Inter** + **JetBrains Mono** fonts (Google Fonts via `next/font`)
 - **Heroicons** for all icons
 - **Supabase** for waitlist email collection
+- **Vercel Analytics** for traffic and waitlist-conversion metrics
 
 ## Design System
 
@@ -44,20 +45,29 @@ Key visual patterns: green gradient CTAs with glow shadows, glass morphism cards
 src/
 ├── app/
 │   ├── globals.css           # Tailwind v4 @theme tokens, base styles
-│   ├── layout.tsx            # Inter font, metadata, dark color scheme
+│   ├── layout.tsx            # Inter + JetBrains Mono fonts, metadata (OG/Twitter), Analytics
 │   ├── page.tsx              # Landing page composition (Header → … → Footer)
+│   ├── opengraph-image.tsx   # Generated 1200×630 social share card (next/og)
+│   ├── apple-icon.tsx        # Generated 180×180 iOS home-screen icon
+│   ├── sitemap.ts            # /sitemap.xml (App Router metadata route)
+│   ├── robots.ts             # /robots.txt
+│   ├── manifest.ts           # /manifest.webmanifest
 │   └── api/waitlist/
 │       └── route.ts          # POST endpoint → Supabase waitlist table
+├── lib/
+│   └── site.ts               # Single source of truth: name, URL, title, copy
 └── components/
     ├── Header.tsx             # Dark glassmorphism nav with FEAST wordmark
-    ├── Hero.tsx               # Split layout: copy left, phone mockup right
+    ├── Hero.tsx               # Centered headline + CTAs above a ChatScreen mockup
     ├── PhoneMockup.tsx        # Reusable phone frame (sm/md/lg sizes)
     ├── Features.tsx           # 2x2 glass morphism feature cards
     ├── Personas.tsx           # 4 AI persona cards with chat previews
     ├── HowItWorks.tsx         # 4 steps with mini phone mockups
     ├── AppPreview.tsx         # 3-phone fan layout
     ├── Waitlist.tsx           # Email signup form → Supabase
-    └── Footer.tsx             # Minimal dark footer
+    ├── Footer.tsx             # Minimal dark footer
+    └── app-screens/           # Live JSX app-screen mockups (Chat/Today/Plan/
+                               #   Recipes/Cook/Grocery) + ScaledScreen, tokens
 ```
 
 ## Development
@@ -81,6 +91,13 @@ npm run lint         # ESLint
 | `NEXT_PUBLIC_SUPABASE_URL` | For waitlist | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | For waitlist | Supabase anon/public key |
 | `NEXT_PUBLIC_SHOW_INFO_LINKS` | No | Set to `true` to show Contact/Privacy/Terms links in the footer |
+
+## SEO & Social
+
+- **Share card:** `src/app/opengraph-image.tsx` generates the 1200×630 image shown when a link is shared (Open Graph + Twitter `summary_large_image`).
+- **Discoverability:** `/sitemap.xml` and `/robots.txt` are generated from `src/app/sitemap.ts` and `robots.ts` — add new public routes to the sitemap list.
+- **Source of truth:** site name, URL, title, and marketing copy live in `src/lib/site.ts`; all metadata files read from it.
+- **Analytics:** Vercel Analytics is enabled in `layout.tsx` and collects on the production deploy only.
 
 ## Brand Guidelines
 
