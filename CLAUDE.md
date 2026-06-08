@@ -25,7 +25,7 @@ Dark theme only — matches the Feast mobile app exactly. No light mode.
 - **Background:** `#050505` / Surface: `#111113` / Card: `#1A1A1D`
 - **Brand green:** `#00D37F` (primary), `#00A863` (gradient end)
 - **Text:** `#F5F5F7` (primary), `#98989F` (secondary), `#5C5C63` (tertiary)
-- **Font:** Inter (via next/font/google)
+- **Font:** Inter (via next/font/google), plus JetBrains Mono — the mono powers the app-screen mockups' uppercase labels (timestamps, tags), exposed as `--font-jetbrains-mono`
 - **Icons:** Heroicons (outline) — no emojis anywhere
 - **Logo:** "FEAST" text wordmark only. The "F" icon is favicon/app icon only.
 
@@ -71,6 +71,24 @@ The `playwright@claude-plugins-official` plugin is enabled globally in `~/.claud
 - **Vercel env vars:** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` (production only)
 - **Fallback:** On API failure, Waitlist component opens mailto: link so signup isn't lost
 
+## SEO, Metadata & Analytics
+
+- **Single source of truth:** `src/lib/site.ts` holds the site name, URL, title, and
+  marketing copy. Every metadata file imports from it so they can't drift apart —
+  change copy or the domain there, not in individual files.
+- **Social share card:** `src/app/opengraph-image.tsx` generates a 1200×630 PNG via
+  `next/og` (dark background, FEAST wordmark, tagline). Used for both `og:image` and
+  `twitter:image`. `layout.tsx` sets `metadataBase`, Open Graph, and a
+  `summary_large_image` Twitter card.
+- **Icons:** `favicon.svg` (linked in `layout.tsx`) plus `src/app/apple-icon.tsx`
+  (generated 180×180 PNG for iOS home-screen saves).
+- **SEO routes:** `src/app/sitemap.ts` and `src/app/robots.ts` (App Router metadata
+  routes) emit `/sitemap.xml` and `/robots.txt`. Add new public routes to the
+  `sitemap.ts` list. `src/app/manifest.ts` emits the web manifest.
+- **Analytics:** Vercel Analytics (`<Analytics />` from `@vercel/analytics/next` in
+  `layout.tsx`). Privacy-friendly, no cookie banner. Data only collects on the
+  production deploy.
+
 ## Copy Guidelines
 
 - Use brand docs as inspiration, not copy-paste — write web-native, conversational copy
@@ -113,3 +131,4 @@ design system, instead of screenshots. See
 
 - **PhoneMockup width overrides:** `PhoneMockup.tsx` applies `s.width` from a `SIZES` lookup. To override via `className`, you must use `!important` (e.g., `className="!w-[200px]"`), otherwise Tailwind specificity is unpredictable.
 - **Hero `pt-32`:** Hero section uses asymmetric padding (`pt-32 pb-24`) for fixed header clearance. Don't replace with `py-*`.
+- **App-screen `TabBar` is floating + translucent:** it's `position: absolute` over the screen, so a list taller than the 360×780 canvas (e.g. `PlanScreen`'s week) scrolls under it. Such screens need a bottom scroll-fade (`transparent → bg` gradient) so the last item dissolves instead of colliding with the bar — see `ScrollFade` in `PlanScreen.tsx`.
